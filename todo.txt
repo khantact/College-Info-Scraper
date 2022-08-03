@@ -1,0 +1,17 @@
+Todo:
+
+Errors:
+
+Fixed:
+liquor law violation disciplinary action displaying Criminal offenses and years and FALSE
+All colleges gradrate, transferrate, gradratemale, gradratefemale, retention rate displaying no information (SUNY Buffalo)
+submitting scores returning FALSE instead of n/a SUNY buffalo/ not inputting Percent, blank data inputted for students submitting scores (ACT)
+SUNY Buffalo - math 25th percent returning FALSE, same with 75th percent
+AVG aid n/a - SUNY Downstate Health sciences 
+ACT Math is n/a
+part time faculty - Warner Pacific University professional and graduate studies, is just n instead of n/a
+Tuition showed up as false instead of n/a
+Room and Board showing up as other
+Total expenses is showing in-state, on campus instead of numbers
+Percent admitted enrolled, percent admitted, secondary school gpa, secondary school rank, all the requirements error showing UNDERGRADUATE ADMISSIONS FALL 2021
+Out of state tuition not working University of Oregon as example

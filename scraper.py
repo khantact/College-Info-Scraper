@@ -1,12 +1,8 @@
 import os
 import csv
 import re
-from pandas import array
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import StaleElementReferenceException
 
 
 # Helper Functions
@@ -15,7 +11,7 @@ def extractInfoFromGraph(element: list):
     """Generates a list of information given a list of WebElements from an image
 
     Args:
-        element (list): list of WebElements 
+        element (list): list of WebElements
     """
     temp_array = []
     array = []
@@ -36,7 +32,31 @@ def extractInfo(info, before, after):
             del info[i]
     return info
 
-# Array to String
+
+def search(element: list, search: str, strict: bool = False, skipfirst: bool = False):
+    """Searches the list for a string strict determines if it must match directly
+
+    Args:
+        element (list): list of elements
+        search (str): what to search for
+        strict (bool): if true, will check if search is directly equal instead of just using in
+        skipfirst (bool): if true, will skip the first element that was matched in the list
+
+    Returns:
+        bool: returns true if found, false if not found
+    """
+    for i in element:
+        if strict == False:
+            if search in i:
+                if skipfirst == True:
+                    continue
+                return True
+        else:
+            if search == i:
+                if skipfirst == True:
+                    continue
+                return True
+    return False
 
 
 def array_toString(array):
@@ -67,7 +87,29 @@ def elementToList(element):
     return array
 
 
-def findElement(element: list, before: str, after, index: int):
+def findElementInGraph(element: list, search: str, strict: bool = False):
+    """Searches within a list of images and finds their alt text and returns the correct image element that matches with the provided alt text
+
+    Args:
+        element (list): list of images
+        search (str): string to search for 
+        strict (bool, optional): determines if search should be strict or not. Defaults to False.
+
+    Returns: 
+        WebElement: returns the correct image element that matches with the provided alt text
+        bool: returns false if the element is not found
+    """
+    for i in element:
+        if strict == False:
+            if search.lower() in i.get_attribute('alt').lower():
+                return i.get_attribute('alt')
+        else:
+            if search.lower() == i.get_attribute('alt').lower():
+                return i.get_attribute('alt')
+    return False
+
+
+def findElement(element: list, before: str, after, index: int, strict: bool = False, skipfirst: bool = False, numtoinclude: int = 1):
     """Finds the requested element within a list of elements given an index
 
     Args:
@@ -75,27 +117,85 @@ def findElement(element: list, before: str, after, index: int):
         before (str): string before the element
         after (any): string after the element, if None, it will not be used
         index (int): index of the element to be found between before and after
+        strict (bool): if true, will check if before/after are directly equal instead of just using in
+        skipfirst (bool): if true, will skip the first element that was matched in the list
+        numtoinclude (int): determines how many elements after the 'after' string to include in the final list
     Returns:
         str: returns the element
         bool: returns false if the element is not found
     """
+    if element == False:
+        return False
     array = []
     found = False
-    if after == None:
-        after = element[-1]
-    for i in range(len(element)):
-        if before in element[i]:
-            found = True
-            array = []
-            array.append(element[i])
-
-        elif after in element[i]:
-            if found == True:
+    if strict == False:
+        if after == None:
+            after = element[-1]
+        for i in range(len(element)):
+            if before in element[i]:
+                if skipfirst == True:
+                    skipfirst = False
+                    continue
+                found = True
+                array = []
                 array.append(element[i])
-                return array[index]
-        else:
-            array.append(element[i])
+
+            elif after in element[i]:
+                if found == True:
+                    array.append(element[i])
+                    if i+numtoinclude < len(element):
+                        for j in range(1, numtoinclude+1):
+                            array.append(element[i+j])
+                        return array[index]
+                    else:
+                        return array[index]
+            else:
+                array.append(element[i])
+    else:
+        if after == None:
+            after = element[-1]
+        for i in range(len(element)):
+            if element[i] == before:
+                if skipfirst == True:
+                    skipfirst = False
+                    continue
+                found = True
+                array = []
+                array.append(element[i])
+            elif element[i] == after:
+                if found == True:
+                    array.append(element[i])
+                    if i+1 < len(element):
+                        array.append(element[i+1])
+                        return array[index]
+                    else:
+                        return array[index]
+            else:
+                array.append(element[i])
     return False
+
+
+def findAfterString(element: list, start: str, index: int, skipfirst: bool = False):
+    """Finds the requested element within a list of elements starting at a start string
+
+    Args:
+        element (list): list of elements to search within
+        start (str): find the start of the new list to create
+        index (int): index of the requested element within the new list
+        skipfirst (bool): if true, will skip the first element that was matched in the list
+
+    Returns:
+        str: returns the element
+    """
+    array = []
+    for i in range(len(element)):
+        if start in element[i]:
+            if skipfirst == True:
+                skipfirst = False
+                continue
+            for j in range(i, len(element)):
+                array.append(element[j])
+            return array[index]
 
 
 def elementSlice(element: list, start: str, end: str):
@@ -112,13 +212,13 @@ def elementSlice(element: list, start: str, end: str):
     array = []
     found = False
     for i in range(len(element)):
-        if element[i] == start:
+        if start in element[i]:
             found = True
             array = []
             array.append(element[i])
-        elif element[i] == end:
+        elif end in element[i]:
             if found == True:
-                break
+                return array
         else:
             array.append(element[i])
     return array
@@ -134,6 +234,8 @@ def elementSplit(element: str, condition1: str, condition2: str, condition3: str
     Returns:
         element (list): returns the split element in a list
     """
+    if element == False:
+        return False
     if condition2 == None and condition3 == None:
         element = re.split(condition1, element)
         return element
@@ -186,8 +288,9 @@ def cleanList(element: list):
     Returns:
         list: Returns the cleaned list
     """
-    element = list(filter(None, element))
-    return element
+    return list(filter(None, element))
+
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 
@@ -211,7 +314,7 @@ def scrapper(college: str, filename: str):
     if os.stat(filename).st_size == 0:
         writer.writerow(['College Name', 'Address', 'Phone#', 'Website', 'Type', 'Degrees', 'Campus Type', 'Campus Housing',
                         'Student Pop', 'StudentsToTeachers', 'MissionStatement', 'Classification', 'SLOs', 'Religious Affiliation',  'Credits Accepted', 'Faculty(full-time)', 'Faculty(part-time)', 'Graduate Assistants', 'Tuition', 'Books/Supplies', 'Room/Board',
-                         'Total Expenses', 'Avg Tuition (In-State)', 'Avg Tuition (Out-of-State)', 'Avg Tuition', 'Avg Aid(grants)', 'Gender Demographic(Male)', 'Gender Demographic(Female)', 'Ethnic Demographic (American Indian or Alaska Native)', 'Ethnic Demographic (Asian)', 'Ethnic Demographic(Black or African American)',
+                         'Total Expenses', 'Undergraduate Avg Tuition (In-State)', 'Undergraduate Avg Tuition (Out-of-State)', 'Graduate Avg Tuition (In-State)', 'Graduate Avg Tuition (Out-of-State)', 'Avg Tuition', 'Avg Aid(grants)', 'Gender Demographic(Male)', 'Gender Demographic(Female)', 'Ethnic Demographic (American Indian or Alaska Native)', 'Ethnic Demographic (Asian)', 'Ethnic Demographic(Black or African American)',
                          'Ethnic Demographic(Hispanic/Latino)', 'Ethnic Demographic(Native Hawaiian or other Pacific Islander)', 'Ethnic Demographic(White)', 'Ethnic Demographic(Two or more races)', 'Ethnic Demographic(Unknown)',
                          'Ethnic Demographic(Non-resident alien)', 'Avg Student Age (24 and Under)', 'Avg Student Age(25 and Over)', 'Avg Student Residence (In-State)', 'Avg Student Residence(Out-of-State)', 'Avg Student Residence(Foreign Countries)',
                          'Graduate Attendance Status(Full-time)', 'Graduate Attendance Status(Part-time)', 'Undergraduate Education Status (Remote)', 'Undergraduate Education Status (In-Person)', 'Graduate Education Status (Remote)', 'Graduate Education Status (In-Person)',
@@ -222,7 +325,7 @@ def scrapper(college: str, filename: str):
                          'Graduation Rate by Race/Ethnicity(American Indian or Alaska Native)', 'Graduation Rate by Race/Ethnicity(Asian)', 'Graduation Rate by Race/Ethnicity(Black or African American)', 'Graduation Rate by Race/Ethnicity(Hispanic/Latino)',
                          'Graduation Rate by Race/Ethnicity(Native Hawaiian or other Pacific Islander)', 'Graduation Rate by Race/Ethnicity(White)', 'Graduation Rate by Race/Ethnicity(Two or more Races)', 'Graduation Rate by Race/Ethnicity(Race/Ethnicity Unknown)',
                          'Graduation Rate by Race/Ethnicity(Non-resident Alien)',
-                         'Murder/Non-negligent Manslaughter', 'Negligent Manslaughter', 'Rape', 'Fondling', 'Incest', 'Statutory Rape', 'Aggravated Assault', 'Burglary', 'Motor Vehicle Theft', 'Arson', 'Domestic Violence', 'Dating Violence', 'Stalking', 'Weapons Arrests',
+                         'Murder/Non-negligent Manslaughter', 'Negligent Manslaughter', 'Rape', 'Fondling', 'Incest', 'Statutory Rape', 'Robbery', 'Aggravated Assault', 'Burglary', 'Motor Vehicle Theft', 'Arson', 'Domestic Violence', 'Dating Violence', 'Stalking', 'Weapons Arrests',
                          'Drug Abuse Arrests', 'Liquor Law Violation Arrests', 'Weapons Disciplinary Action', 'Drug Abuse Disciplinary Action', 'Liquor Law Violation Disciplinary Action', 'Programs'])
 
     # Inputs each college from a list of colleges and goes to their respective pages
@@ -251,15 +354,45 @@ def scrapper(college: str, filename: str):
                 driver.find_element(
                     'xpath', yclass+'['+str(counter)+']'+basepathend).click()
                 break
-    driver.find_element(
-        'xpath', "//div[@class='expandcollapse colorful']/a[1]").click()
+    try:
+        driver.find_element(
+            'xpath', "//tbody/tr[@class='resultsW']/td[2]/a/strong").click()
+    except NoSuchElementException:
+        pass
+    try:
+        driver.find_element(
+            'xpath', "//div[@class='expandcollapse colorful']/a[1]").click()
+    except NoSuchElementException:
+        print('Error in pressing expand all button with: ' +
+              college + ' skipping...')
+        return False
+    # Datasets -----------------------------------------------------------------------------------
+    generalinfo = driver.find_element(
+        'xpath', '//div[@id="ctl00_cphCollegeNavBody_ucInstitutionMain_divNPC"]').text
+    dashboarddataset = elementToList(driver.find_elements(
+        'xpath', "//div[2]/table[@class='layouttab']/tbody/tr"))
+    tuitiondataset = elementToList(driver.find_elements(
+        'xpath', "//div[@id = 'divctl00_cphCollegeNavBody_ucInstitutionMain_ctl00']/div[@class = 'tabconstraint']/table[@class = 'tabular']/tbody/tr/td"))
+    admissiondataset = elementToList(driver.find_elements(
+        'xpath', '//div[@id="divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04"]/div/table/tbody/tr/td'))
+    graphdataset = driver.find_elements(
+        'xpath', '//table[@class="graphtabs"]/tbody/tr/td/img')
+    aiddataset = elementToList(driver.find_elements(
+        'xpath', "//div[@id='RightContent']/div[9]/div[@id='finaid']/div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl01']/div/table/tbody/tr/td"))
+    # -------------------------------------------------------------------------------------------
     # Check college/university validity
-    if driver.find_element('xpath', "//tr[6]/td[@class='srb']").text == 'Related Institutions:':
+    if search(dashboarddataset, 'Related Institutions') == True and search(dashboarddataset, 'parent institution') == False:
         print(college + " is a branch of a parent college, skipping...")
         file.close()
         driver.quit()
         return False
-    if 'RETENTION' not in driver.find_element('xpath', "//div[@id='retgrad']/div[@class='collapsing2']").text:
+    try:
+        if 'RETENTION' not in driver.find_element('xpath', "//div[@id='retgrad']/div[@class='collapsing2']").text:
+            print(college + " is missing vital data (retention/grad rates), skipping...")
+            file.close()
+            driver.quit()
+            return False
+    except NoSuchElementException:
         print(college + " is missing vital data (retention/grad rates), skipping...")
         file.close()
         driver.quit()
@@ -267,15 +400,7 @@ def scrapper(college: str, filename: str):
     university = False
     if 'University' in college:
         university = True
-    # Datasets -----------------------------------------------------------------------------------
-    generalinfo = driver.find_element(
-        'xpath', '//div[@id="ctl00_cphCollegeNavBody_ucInstitutionMain_divNPC"]').text
-    tuitiondataset = elementToList(driver.find_elements(
-        'xpath', '//div[@class="tabconstraint"]//table/tbody/tr/td'))
-    admissiondataset = elementToList(driver.find_elements(
-        'xpath', '//div[@id="divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04"]/div/table/tbody/tr/td'))
-    graphdataset = driver.find_elements(
-        'xpath', '//table[@class="graphtabs"]/tbody/tr/td/img')
+
     if 'Community College' in college:
         u_remotelearningdataset = driver.find_element(
             'xpath', "//div[@class='tabconstraint']/table[@class='graphtabs'][4]/tbody/tr/td/img").get_attribute('alt')
@@ -310,8 +435,15 @@ def scrapper(college: str, filename: str):
         'xpath', "//table[@class='layouttab']/tbody/tr[6]/td[2]").text
     studentpop = driver.find_element(
         'xpath', "//table[@class='layouttab']/tbody/tr[7]/td[2]").text
-    studenttofaculty = driver.find_element(
-        'xpath', "//table[@class='layouttab']/tbody/tr[8]/td[2]").text
+    try:
+        if search(dashboarddataset, 'Student-to-faculty ratio'):
+            studenttofaculty = elementSplit(
+                dashboarddataset[7], ':   ', None, None)[1]
+        else:
+            studenttofaculty = 'n/a'
+    except NoSuchElementException:
+        studenttofaculty = 'n/a'
+
     missionstatement = elementSplit(driver.find_element(
         'xpath', '//div[@class="mscontainer"]').text, '\n  ', None, None)[1]
     classification = extractInfo(
@@ -321,7 +453,7 @@ def scrapper(college: str, filename: str):
     religion = extractInfo(
         generalinfo, 'Religious Affiliation', 'Federal Aid')
     creditsaccepted = extractInfo(generalinfo, 'Credit Accepted', 'n/a')
-    ptfaculty = 'n\a'
+    ptfaculty = "n/a"
     # Check if faculty datra is combined with a parent institution
     if 'parent institution' in driver.find_element('xpath', "//div[@id='ctl00_cphCollegeNavBody_ucInstitutionMain_divFaculty']/div[@class='detailseparate']").text:
         driver.find_element(
@@ -349,38 +481,75 @@ def scrapper(college: str, filename: str):
                 'xpath', "//div[@class='detailseparate']/table[@class='tabular']/tbody/tr[4]/td[3]").text
         except NoSuchElementException:
             gradassistants = 'n/a'
-    tuition = (findElement(
-        tuitiondataset, 'Tuition and fees', 'Books and supplies', -2))
     booksandsupplies = (findElement(
-        tuitiondataset, 'Books and supplies', 'Living arrangement', -2))
-    roomandboard = (findElement(tuitiondataset, 'Room and board', 'Other', -2))
-    totalexpenses = (findElement(tuitiondataset, '% CHANGE', '', 1))
+        tuitiondataset, 'Books and supplies', 'Living arrangement', 4, False))
+    roomandboard = (findElement(
+        cleanList(tuitiondataset), 'Room and board', '%', 4))
+    totalexpenses = (findElement(
+        cleanList(tuitiondataset), '% CHANGE', '%', 6))
 
     # -----------------------------------------------------Tuition----------------------------------------------------------------
     instatetuition = 'n/a'
     outofstatetuition = 'n/a'
     avgtuition = 'n/a'
-    if totalexpenses == False or '$' in totalexpenses:
-        totalexpenses = 'n/a'
+    tuition = 'n/a'
+    g_instatetuition = 'n/a'
+    g_outofstatetuition = 'n/a'
+    try:
+        if 'In-state' not in (cleanList(tuitiondataset)) and '%' in cleanList(tuitiondataset):
+            tuition = findElement(cleanList(tuitiondataset),
+                                  'Tuition and fees', '%', 4)
+        if 'In-state' not in cleanList(tuitiondataset) and '%' not in cleanList(tuitiondataset):
+            tuition = findElement(cleanList(tuitiondataset),
+                                  'Tuition', 'Fees', 1, True)
+    except NoSuchElementException:
+        tuition = 'n/a'
+    try:
+        if search(cleanList(tuitiondataset), 'Graduate student tuition'):
+            if search(cleanList(tuitiondataset), 'In-state tuition', True, True) and search(tuitiondataset, '%'):
+                g_instatetuition = (findElement(cleanList(
+                    tuitiondataset), 'In-state tuition', None, 4, True, True))
+            else:
+                g_instatetuition = (findElement(cleanList(
+                    tuitiondataset), 'In-state tuition', None, 1, True, True))
+            if search(cleanList(tuitiondataset), 'Out-of-state tuition', True, True) and search(tuitiondataset, '%'):
+                g_outofstatetuition = (findElement(cleanList(
+                    tuitiondataset), 'Out-of-state tuition', None, 4, True, True))
+            else:
+                g_outofstatetuition = (findElement(cleanList(
+                    tuitiondataset), 'Out-of-state tuition', None, 1, True, True))
 
-    if driver.find_elements('xpath', "//div[@class='tabconstraint']/table[@class='tabular'][2]/tbody/tr/td")[0].text == 'In-state tuition':
-        instatetuition = driver.find_elements('xpath',
-                                              "//div[@class='tabconstraint']/table[@class='tabular'][2]/tbody/tr/td")[1].text
-        if driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl00']/div[@class='tabconstraint']/table[@class='tabular'][1]/tbody/tr[@class='level1indent'][2]/td[1]").text == 'Out-of-state tuition':
-            outofstatetuition = driver.find_elements('xpath',
-                                                     "// div[@class='tabconstraint']/table[@class='tabular'][2]/tbody/tr/td")[5].text
-        if driver.find_elements('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl00']/div[@class='tabconstraint']/table[@class='tabular'][2]/tbody/tr[1]/td")[0].text == 'Tuition':
-            avgtuition = elementToList(driver.find_elements('xpath',
-                                                            "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl00']/div[@class='tabconstraint']/table[@class='tabular'][2]/tbody/tr[1]/td"))[1]
-        if '$' not in driver.find_elements('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl01']/div[@class='tabconstraint']/table[@class='tabular']/tbody/tr[1]/td[4]")[0].text:
-            avg_aid = driver.find_elements(
-                'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl01']/div[@class='tabconstraint']/table[@class='tabular']/tbody/tr[1]/td[4]")[1].text
-    else:
-        try:
-            avg_aid = (driver.find_element(
-                'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl01']/div[@class='tabconstraint']/table[@class='tabular']/tbody/tr[1]/td[4]").text)
-        except NoSuchElementException:
+    except NoSuchElementException:
+        pass
+    try:
+        if search(aiddataset, 'Grant or scholarship aid'):
+            avg_aid = findElement(
+                aiddataset, 'Grant or scholarship aid', '$', -1)
+        else:
             avg_aid = 'n/a'
+    except NoSuchElementException:
+        avg_aid = 'n/a'
+
+    try:
+        if search(cleanList(tuitiondataset), 'In-state'):
+            if search(tuitiondataset, '%'):
+                instatetuition = (findElement(cleanList(
+                    tuitiondataset), 'In-state', '%', 4))
+            else:
+                instatetuition = (findElement(cleanList(
+                    tuitiondataset), 'In-state', '$', 1))
+        if search(cleanList(tuitiondataset), 'Out-of-state'):
+            if search(tuitiondataset, '%'):
+                outofstatetuition = findElement(
+                    cleanList(tuitiondataset), 'Out-of-state', '%', 4)
+            else:
+                outofstatetuition = findElement(
+                    cleanList(tuitiondataset), 'Out-of-state', '$', 1)
+    except NoSuchElementException:
+        instatetuition = 'n/a'
+        outofstatetuition = 'n/a'
+
+
 # Redeclare datasets due to page backing
     generalinfo = driver.find_element(
         'xpath', '//div[@id="ctl00_cphCollegeNavBody_ucInstitutionMain_divNPC"]').text
@@ -441,13 +610,13 @@ def scrapper(college: str, filename: str):
         g_remotelearning = 'n/a'
         g_inpersonlearning = 'n/a'
         gradassistants = 'n/a'
+        u_remotelearning = 'n/a'
+        u_inpersonlearning = 'n/a'
         if findElement(remotelearndata, 'Undergraduate Enrollment by Distance Education', 'Not enrolled in any distance', 2) != False:
             u_remotelearning = stataddition(
                 findElement(remotelearndata, 'Undergraduate Enrollment by Distance Education', 'Not enrolled in any distance', 2), findElement(remotelearndata, 'Undergraduate Enrollment by Distance Education', 'Not enrolled in any distance', 4))
             u_inpersonlearning = findElement(extractInfoFromGraph(
-                graphdataset), 'Undergraduate Enrollment by Distance Education', 'Not enrolled in any distance', 6)
-        u_remotelearning = 'n/a'
-        u_inpersonlearning = 'n/a'
+                graphdataset), 'Undergraduate Enrollment by Distance Education', 'Not enrolled in any distance', -1)
         if findElement(remotelearndata, 'Graduate Enrollment by Distance Education', 'Not enrolled in any distance', 2) != False:
             g_remotelearning = stataddition(
                 findElement(remotelearndata, 'Enrolled only in distance education', 'Not enrolled in any distance', 1), findElement(remotelearndata, 'Enrolled only in distance education', 'Not enrolled in any distance', 3))
@@ -487,7 +656,7 @@ def scrapper(college: str, filename: str):
         admissiontestscores = openadmission
         toefl = openadmission
     else:
-        if 'Undergraduate Admissions' not in driver.find_element(
+        if 'UNDERGRADUATE ADMISSIONS' not in driver.find_element(
                 'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']/div").text:
             noadmit = driver.find_element(
                 'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']/div").text
@@ -502,10 +671,11 @@ def scrapper(college: str, filename: str):
             admissiontestscores = noadmit
             toefl = noadmit
         else:
+            # TODO fix this secntion
             totalapplicants = findElement(
                 admissiondataset, 'Number of applicants', 'Percent admitted', 1)
             percentadmitted = findElement(
-                admissiondataset, 'Percent admitted', 'Percent admitted who enrolled', 1)
+                admissiondataset, 'Percent admitted', '%', 1)
             admittedandenrolled = findElement(
                 admissiondataset, 'Percent admitted who enrolled', 'Secondary school GPA', 1)
             secondaryschoolgpa = determineRequirement(elementSlice(
@@ -524,17 +694,16 @@ def scrapper(college: str, filename: str):
                 admissiondataset, 'TOEFL (Test of English as a Foreign language)', 'SAT'))
     #----------------------------------------------------------------------------------------------#
     if 'SAT' in admissiondataset:
-        submittingsat = findElement(admissiondataset, 'SAT', 'ACT', 2)
-        submittingact = findElement(admissiondataset, 'ACT',
-                                    'SAT Evidence-Based Reading and Writing', 2)
+        submittingsat = findElement(admissiondataset, 'SAT', None, 2, True)
+        submittingact = findElement(admissiondataset, 'ACT', None, 2, True)
         sat_en_lowpercentile = findElement(
             admissiondataset, 'SAT Evidence-Based Reading and Writing', 'SAT Math', 1)
         sat_en_highpercentile = findElement(
             admissiondataset, 'SAT Evidence-Based Reading and Writing', 'SAT Math', 2)
         sat_math_lowpercentile = findElement(
-            admissiondataset, 'SAT Math', 'ACT Composite', 1)
+            admissiondataset, 'SAT Math', None, 1)
         sat_math_highpercentile = findElement(
-            admissiondataset, 'SAT Math', 'ACT Composite', 2)
+            admissiondataset, 'SAT Math', None, 2)
         act_composite_lowpercentile = findElement(
             admissiondataset, 'ACT Composite', 'ACT English', 1)
         act_composite_highpercentile = findElement(
@@ -544,7 +713,7 @@ def scrapper(college: str, filename: str):
         act_english_highpercentile = findElement(
             admissiondataset, 'ACT English', 'ACT Math', 2)
         act_math_lowpercentile = findElement(
-            admissiondataset, 'ACT Math', '', 1)
+            admissiondataset, 'ACT Math', None, 1)
         act_math_highpercentile = findElement(
             admissiondataset, 'ACT Math', None, 2)
     else:
@@ -561,84 +730,45 @@ def scrapper(college: str, filename: str):
         act_math_lowpercentile = 'n/a'
         act_math_highpercentile = 'n/a'
     #----------------------------------------------------------------------------------------------#
-    if 'Retention' in driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl05']/div[@class='tabconstraint']/div[1]").text:
-        if university:
-            retentionrate = elementSplit(
-                graphdataset[8].get_attribute('alt'), ':\n', ': ', '\n')[2]
-            graduationrate = elementSplit(
-                graphdataset[9].get_attribute('alt'), ':\n', ': ', '\n')[2]
-            transferrate = elementSplit(
-                graphdataset[9].get_attribute('alt'), ':\n', ': ', '\n')[4]
-            gradratemale = elementSplit(
-                graphdataset[11].get_attribute('alt'), ':\n', ': ', '\n')[2]
-            gradratefemale = elementSplit(
-                graphdataset[11].get_attribute('alt'), ':\n', ': ', '\n')[4]
-            gradrate = elementSplit(
-                graphdataset[12].get_attribute('alt'), ':\n', ': ', '\n')
-            gradrateindiannative = gradrate[2]
-            gradrateasian = gradrate[4]
-            gradrateblack = gradrate[6]
-            gradratehispanic = gradrate[8]
-            gradratehawaiian = gradrate[10]
-            gradratewhite = gradrate[12]
-            if len(gradrate) > 16:
-                gradratetwoormore = gradrate[14]
-                gradrateunknown = gradrate[16]
-            if gradrate[9] != 'Native Hawaiian or other Pacific Islander':
-                gradratehawaiian = 'n/a'
-                gradratewhite = gradrate[10]
-                gradratetwoormore = gradrate[12]
-            if gradrate[13] != 'Race/ethnicity unknown':
-                gradrateunknown = 'n/a'
-                gradratealien = gradrate[14]
-            else:
-                gradratealien = gradrate[-1]
-        else:
-            retentionrate = elementSplit(
-                graphdataset[6].get_attribute('alt'), ':\n', ': ', '\n')[-1]
-            graduationrate = elementSplit(
-                graphdataset[7].get_attribute('alt'), ':\n', ': ', '\n')[2]
-            transferrate = elementSplit(
-                graphdataset[7].get_attribute('alt'), ':\n', ': ', '\n')[-1]
-            gradratemale = elementSplit(
-                graphdataset[9].get_attribute('alt'), ':\n', ': ', '\n')[2]
-            gradratefemale = elementSplit(
-                graphdataset[9].get_attribute('alt'), ':\n', ': ', '\n')[4]
-            gradrate = elementSplit(
-                graphdataset[10].get_attribute('alt'), ':\n', ': ', '\n')
-            gradrateindiannative = gradrate[2]
-            gradrateasian = gradrate[4]
-            gradrateblack = gradrate[6]
-            gradratehispanic = gradrate[8]
-            gradratewhite = gradrate[12]
-            gradratetwoormore = gradrate[14]
-            if len(gradrate) > 16:
-                gradrateunknown = gradrate[16]
-            # Handle missing data
-            if gradrate[9] != 'Native Hawaiian or other Pacific Islander':
-                gradratehawaiian = 'n/a'
-                gradratewhite = gradrate[10]
-                gradratetwoormore = gradrate[12]
-            if gradrate[13] != 'Race/ethnicity unknown':
-                gradrateunknown = 'n/a'
-                gradratealien = gradrate[14]
-            else:
-                gradratealien = gradrate[16]
+
+    if 'RETENTION' in driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl05']/div[@class='tabconstraint']/div[1]").text:
+        retentionrate = elementSplit(
+            findElementInGraph(graphdataset, 'retention'), ':\n', ': ', '\n')[2]
+        graduationrate = elementSplit(
+            findElementInGraph(graphdataset, 'graduation rate'), ':\n', ': ', '\n')[2]
+        transferrate = elementSplit(
+            findElementInGraph(graphdataset, 'Transfer-out rate'), ':\n', ': ', '\n')[4]
+        gradratemale = findElement(elementSplit(
+            findElementInGraph(graphdataset, 'Graduation Rate by Gender'), ':\n', ': ', '\n'), 'Male', '%', 1)
+        gradratefemale = findElement(elementSplit(
+            findElementInGraph(graphdataset, 'Graduation Rate by Gender'), ':\n', ': ', '\n'), 'Female', '%', 1)
+        gradrate = elementSplit(
+            findElementInGraph(graphdataset, 'Graduation Rate by Race/Ethnicity'), ':\n', ': ', '\n')
+        gradrateindiannative = findElement(
+            gradrate, 'American Indian', '%', 1)
+        gradrateasian = findElement(gradrate, 'Asian', '%', 1)
+        gradrateblack = findElement(gradrate, 'Black', '%', 1)
+        gradratehispanic = findElement(gradrate, 'Hispanic', '%', 1)
+        gradratehawaiian = findElement(gradrate, 'Native Hawaiian', '%', 1)
+        gradratewhite = findElement(gradrate, 'White', '%', 1)
+        gradratetwoormore = findElement(gradrate, 'Two or more', '%', 1)
+        gradrateunknown = findElement(gradrate, 'unknown', '%', 1)
+        gradratealien = findElement(gradrate, 'alien', '%', 1)
     else:
-        retentionrate = 'no information'
-        graduationrate = 'no information'
-        transferrate = 'no information'
-        gradratemale = 'no information'
-        gradratefemale = 'no information'
-        gradrateindiannative = 'no information'
-        gradrateasian = 'no information'
-        gradrateblack = 'no information'
-        gradratehispanic = 'no information'
-        gradratehawaiian = 'no information'
-        gradratewhite = 'no information'
-        gradratetwoormore = 'no information'
-        gradrateunknown = 'no information'
-        gradratealien = 'no information'
+        retentionrate = ''
+        graduationrate = ''
+        transferrate = ''
+        gradratemale = ''
+        gradratefemale = ''
+        gradrateindiannative = ''
+        gradrateasian = ''
+        gradrateblack = ''
+        gradratehispanic = ''
+        gradratehawaiian = ''
+        gradratewhite = ''
+        gradratetwoormore = ''
+        gradrateunknown = ''
+        gradratealien = ''
 
         #-----------------------------------Crime Statistics----------------------------------------------#
     murders = findElement(
@@ -653,6 +783,8 @@ def scrapper(college: str, filename: str):
         crimedataset, 'e. Incest', 'f. Statutory Rape', 3)
     statutoryrape = findElement(
         crimedataset, 'f. Statutory Rape', 'g. Robbery', 3)
+    robbery = findElement(crimedataset, 'g. Robbery',
+                          'h. Aggravated assault', 3)
     aggravatedassault = findElement(
         crimedataset, 'h. Aggravated assault', 'i. Burglary', 3)
     burglary = findElement(
@@ -676,22 +808,28 @@ def scrapper(college: str, filename: str):
         crimedataset, 'Disciplinary Actions', 'b. Drug abuse violations', 7)
     drugsdisciplinaryactions = findElement(
         crimedataset, 'Disciplinary Actions', 'c. Liquor law violations', 11)
-    liquordisciplinaryactions = findElement(
-        crimedataset, 'Disciplinary Actions', 'Criminal Offenses', 15)
+    liquordisciplinaryactions = findAfterString(
+        crimedataset, 'c. Liquor law violations', 3, True)
 
     #-----------------------------Programs--------------------------------------------#
     programslist = "//table[@class='pmtabular']/tbody/tr[@class='subrow nb']"
     #----------------------------------------------------------------------------------------------#
+
     csvinfo = [college, address, phonenum, website, type,
                awardsoffered, campussetting, campushousing, studentpop, studenttofaculty, missionstatement, array_toString(
                    classification), array_toString(slo), array_toString(religion), array_toString(creditsaccepted), ftfaculty, ptfaculty,
-               gradassistants, tuition, booksandsupplies, roomandboard, totalexpenses, instatetuition, outofstatetuition, avgtuition, avg_aid, maledemographic, femaledemographic, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7,
+               gradassistants, tuition, booksandsupplies, roomandboard, totalexpenses, instatetuition, outofstatetuition, g_instatetuition, g_outofstatetuition, avgtuition, avg_aid, maledemographic, femaledemographic, ethnic1, ethnic2, ethnic3, ethnic4, ethnic5, ethnic6, ethnic7,
                ethnic8, ethnic9, underage, overage, instateresidence, outofstateresidence, foreigncountriesresidence, fulltimegraduate, parttimegraduate, u_remotelearning, u_inpersonlearning, g_remotelearning, g_inpersonlearning, applicationfee, totalapplicants,
                percentadmitted, admittedandenrolled, secondaryschoolgpa, secondaryschoolrank, secondarschoolrecord, collegeprepprogram, recommendations, admissiontestscores, toefl, submittingsat, submittingact, sat_en_lowpercentile, sat_en_highpercentile,
                sat_math_lowpercentile, sat_math_highpercentile, act_composite_lowpercentile, act_composite_highpercentile, act_english_lowpercentile, act_english_highpercentile, act_math_lowpercentile, act_math_highpercentile, retentionrate, graduationrate,
                transferrate, gradratemale, gradratefemale, gradrateindiannative, gradrateasian, gradrateblack, gradratehispanic, gradratehawaiian, gradratewhite, gradratetwoormore, gradrateunknown, gradratealien,
-               murders, manslaughter, rape, fondling, incest, statutoryrape, aggravatedassault, burglary, cartheft, arson, domesticviolence, datingviolence, stalking, weaponarrests, drugarrests, liquorarrests, weaponsdisciplinaryactions,
+               murders, manslaughter, rape, fondling, incest, statutoryrape, robbery, aggravatedassault, burglary, cartheft, arson, domesticviolence, datingviolence, stalking, weaponarrests, drugarrests, liquorarrests, weaponsdisciplinaryactions,
                drugsdisciplinaryactions, liquordisciplinaryactions]
+
+    for i in range(len(csvinfo)):
+        if csvinfo[i] == False or csvinfo[i] == '' or csvinfo[i] == '�':
+            csvinfo[i] = 'n/a'
+
     writer.writerow(csvinfo)
 
     # Clean up
@@ -706,8 +844,8 @@ def main(file):
         college = collegelist.readline()
         if not college:
             break
+        print('Now analyzing: ' + college)
         scrapper(college, 'collegeinfo.csv')
-
     collegelist.close()
 
 
