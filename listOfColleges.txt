@@ -1,6 +1,6 @@
-Alabama A &amp; M University
+Alabama A & M University
 Alabama College of Osteopathic Medicine
-Alabama School of Nail Technology &amp; Cosmetology
+Alabama School of Nail Technology & Cosmetology
 Alabama State University
 Amridge University
 Athens State University
@@ -174,7 +174,7 @@ Paradise Valley Community College
 Paul Mitchell the School-Phoenix
 Penrose Academy
 Phoenix College
-Phoenix Institute of Herbal Medicine &amp; Acupuncture
+Phoenix Institute of Herbal Medicine & Acupuncture
 Phoenix Seminary
 Pima Community College
 Pima Medical Institute-East Valley
@@ -191,7 +191,7 @@ Scottsdale Community College
 Sessions College for Professional Design
 Sonoran Desert Institute
 South Mountain Community College
-Southwest College of Naturopathic Medicine &amp; Health Sciences
+Southwest College of Naturopathic Medicine & Health Sciences
 Southwest Institute of Healing Arts
 Studio Academy of Beauty
 The School of Architecture
@@ -245,8 +245,8 @@ Champion Christian College
 Cossatot Community College of the University of Arkansas
 Crowley's Ridge College
 Delta Designs Cosmetology School
-Designer Barber &amp; Stylist School
-Designer Barber &amp; Stylist School -
+Designer Barber & Stylist School
+Designer Barber & Stylist School -
 East Arkansas Community College
 Eastern College of Health Vocations-Little Rock
 Ecclesia College
@@ -362,7 +362,7 @@ Aveda Institute-Los Angeles
 Aviation Institute of Maintenance-Fremont
 Azusa Pacific University
 Bakersfield College
-Baldwin Park Adult &amp; Community Education
+Baldwin Park Adult & Community Education
 Baldy View Regional Occupational Program
 Bard College - MAT Program CA
 Barstow Community College
@@ -405,8 +405,8 @@ California Healing Arts College
 California Health Sciences University
 California Indian Nations College
 California Institute of Advanced Management
-California Institute of Arts &amp; Technology
-California Institute of Arts &amp; Technology-National City
+California Institute of Arts & Technology
+California Institute of Arts & Technology-National City
 California Institute of Integral Studies
 California Institute of Medical Science
 California Institute of Technology
@@ -539,7 +539,7 @@ DeVry University-California
 Diablo Valley College
 Diamond Beauty College
 Diversified Vocational College
-Dominican School of Philosophy &amp; Theology
+Dominican School of Philosophy & Theology
 Dominican University of California
 Dongguk University Los Angeles
 Downey Adult School
@@ -548,13 +548,13 @@ El Camino Community College District
 Elite Cosmetology School
 Emperor's College of Traditional Oriental Medicine
 Empire College
-Epic Bible College &amp; Graduate School
+Epic Bible College & Graduate School
 Escondido Adult School
 Estes Institute of Cosmetology Arts and Science
 Evergreen Valley College
 Feather River Community College District
 Federico Beauty Institute
-FIDM-Fashion Institute of Design &amp; Merchandising-Los Angeles
+FIDM-Fashion Institute of Design & Merchandising-Los Angeles
 Fielding Graduate University
 Five Branches University
 Flair Beauty College
@@ -607,7 +607,7 @@ Hypnosis Motivation Institute
 ICOHS College
 IDEA at ATEP
 Imperial Valley College
-Independent Training &amp; Apprenticeship Program
+Independent Training & Apprenticeship Program
 Institute for Business and Technology
 Institute of Buddhist Studies
 Institute of Culinary Education
@@ -619,12 +619,12 @@ InterCoast Colleges-Riverside
 InterCoast Colleges-Santa Ana
 InterCoast Colleges-West Covina
 Interior Designers Institute
-International College of Beauty Arts &amp; Sciences
+International College of Beauty Arts & Sciences
 International College of Cosmetology
 International School of Beauty Inc
 International School of Cosmetology
 International Technological University
-Irell &amp; Manella Graduate School of Biological Sciences at City of Hope
+Irell & Manella Graduate School of Biological Sciences at City of Hope
 Irvine Valley College
 J D Academy of Salon and Spa
 Jesuit School of Theology of Santa Clara University
@@ -641,8 +641,8 @@ Las Positas College
 Lassen Community College
 Latin American Bible Institute
 Laurus College
-Lawrence &amp; Company College of Cosmetology
-Lawrence &amp; Company College of Cosmetology
+Lawrence & Company College of Cosmetology
+Lawrence & Company College of Cosmetology
 Learnet Academy Inc
 Life Chiropractic College West
 Life Pacific University
@@ -699,7 +699,7 @@ Minerva University
 MiraCosta College
 MiraCosta College - San Elijo Campus
 Mission College
-MIXED Institute of Cosmetology &amp; Barber
+MIXED Institute of Cosmetology & Barber
 Modern Beauty Academy
 Modern Technology School
 Modesto Junior College
@@ -714,7 +714,7 @@ Mt San Jacinto Community College District
 Mt. Diablo Adult Education-Mt. Diablo USD
 MTI College
 Musicians Institute
-My Beauty &amp; Barber College
+My Beauty & Barber College
 My Le's Beauty College
 Napa Valley College
 National Career College
@@ -882,7 +882,7 @@ The Salon Professional Academy-Grand Junction
 Tigi Hairdressing Academy-Colorado Springs
 Trinidad State College
 Tuana European Beauty Academy
-Turing School of Software &amp; Design
+Turing School of Software & Design
 United Beauty College
 United College of Health and Beauty
 United States Air Force Academy
@@ -895,12 +895,12 @@ Western Colorado University
 Academy Di Capelli -
 Academy Di Capelli-School of Cosmetology
 Albertus Magnus College
-American Institute of Healthcare &amp; Technology
+American Institute of Healthcare & Technology
 American Institute-West Hartford
 American Sentinel College of Nursing and Health Sciences
 Asnuntuck Community College
 Belle Academy of Cosmetology LLC
-Branford Academy of Hair &amp; Cosmetology-Bridgeport
+Branford Academy of Hair & Cosmetology-Bridgeport
 Branford Academy of Hair and Cosmetology
 Bristol Technical Education Center
 Capital Community College
@@ -945,7 +945,7 @@ Quinebaug Valley Community College
 Quinnipiac University
 Relay Graduate School of Education - Connecticut
 Rensselaer at Hartford
-Ricci's Toni &amp; Guy Hairdressing Academy/TIGI Creative School
+Ricci's Toni & Guy Hairdressing Academy/TIGI Creative School
 Sacred Heart University
 Southern Connecticut State University
 Stone Academy-East Hartford
@@ -980,7 +980,7 @@ Delaware Technical Community College-Owens
 Delaware Technical Community College-Stanton/Wilmington
 Delaware Technical Community College-Terry
 Goldey-Beacom College
-Hair Academy School of Barbering &amp; Beauty
+Hair Academy School of Barbering & Beauty
 Margaret H Rollins School of Nursing at Beebe Medical Center
 Paul Mitchell the School-Delaware
 Polytech Adult Education
@@ -1047,7 +1047,7 @@ Ave Maria University
 Aveda Institute-South Florida
 Aveda Institute-Tallahassee
 Aviation Institute of Maintenance-Orlando
-Aviator College of Aeronautical Science &amp; Technology -  Kissimmee
+Aviator College of Aeronautical Science & Technology -  Kissimmee
 Aviator College of Aeronautical Science and Technology
 Barry University
 Barry University Law School
@@ -1061,8 +1061,8 @@ Boca Beauty Academy
 Boca Beauty Academy-Parkland
 Brewster Technical College
 Broward College
-Cambridge College of Healthcare &amp; Technology
-Cambridge Institute of Allied Health &amp; Technology
+Cambridge College of Healthcare & Technology
+Cambridge Institute of Allied Health & Technology
 Cape Coral Technical College
 CBT Technology Institute-Cutler Bay
 CBT Technology Institute-Hialeah
@@ -1122,7 +1122,7 @@ First Coast Technical College
 Flagler College
 Flagler Technical College
 Florida Academy
-Florida Academy of Health &amp; Beauty
+Florida Academy of Health & Beauty
 Florida Academy of Nursing
 Florida Agricultural and Mechanical University
 Florida Atlantic University
@@ -1178,7 +1178,7 @@ Galen College of Nursing-Tampa Bay
 Galen Health Institutes-Miami Campus
 George Stone Technical College
 George T Baker Aviation Technical College
-Global Medical &amp; Technical Training Institute
+Global Medical & Technical Training Institute
 Gulf Coast State College
 Gwinnett Institute
 HCI College
@@ -1209,7 +1209,7 @@ Johnson University Florida
 Jones Technical Institute
 Jose Maria Vargas University
 Kaizen Beauty Academy
-KCK Beauty &amp; Barber Academy
+KCK Beauty & Barber Academy
 Keiser University -  Clearwater
 Keiser University - New Port Richey
 Keiser University - Residential (Flagship)
@@ -1237,7 +1237,7 @@ Latin Beauty Academy
 Lee Professional Institute
 Lindsey Hopkins Technical College
 Lively Technical College
-Loraines Academy &amp; Spa
+Loraines Academy & Spa
 Lorenzo Walker Technical College
 Lynn University
 Manatee Technical College
@@ -1288,7 +1288,7 @@ Orange Technical College-Winter Park Campus
 Osceola Technical College
 Osceola Technical College - Poinciana Campus
 Osceola Technical College - St. Cloud Campus
-Palm Beach Academy of Health &amp; Beauty
+Palm Beach Academy of Health & Beauty
 Palm Beach Atlantic University
 Palm Beach State College
 Parisian Spa Institute
@@ -1299,7 +1299,7 @@ Paul Mitchell the School-Jacksonville
 Paul Mitchell the School-Miami
 Paul Mitchell the School-Orlando
 Paul Mitchell the School-Tampa
-Pensacola School of Massage Therapy &amp; Health Careers
+Pensacola School of Massage Therapy & Health Careers
 Pensacola State College
 Pets Playground Grooming School
 PiBerry Institute
@@ -1310,7 +1310,7 @@ Polytechnic University of Puerto Rico-Miami
 Polytechnic University of Puerto Rico-Orlando
 Praxis Institute
 Premiere International College
-Prestige Health &amp; Beauty Sciences Academy
+Prestige Health & Beauty Sciences Academy
 Radford M Locklin Technical College
 Rasmussen University - Orlando
 Rasmussen University-Central Pasco
@@ -1384,7 +1384,7 @@ Tom P. Haney Technical College
 Total Beauty Institute
 Traviss Technical College
 Treasure Coast Technical College
-Trendsetters School of Beauty &amp; Barbering
+Trendsetters School of Beauty & Barbering
 Trinity Baptist College
 Trinity College of Florida
 Trinity International University-Florida
@@ -1394,7 +1394,7 @@ Ultimate Medical Academy
 Ultrasound Medical Institute
 United International College
 Universal Career School
-Universal Technical Institute-Auto Motorcycle &amp; Marine Mechanics Institute Division-Orlando
+Universal Technical Institute-Auto Motorcycle & Marine Mechanics Institute Division-Orlando
 University of Central Florida
 University of Florida
 University of Florida-Online
@@ -1402,7 +1402,7 @@ University of Fort Lauderdale
 University of Miami
 University of North Florida
 University of South Florida
-UR Beauty &amp; Barber Academy
+UR Beauty & Barber Academy
 Valencia College
 Warner University
 Webber International University
@@ -1432,7 +1432,7 @@ Berry College
 Beulah Heights University
 Brenau University
 Brewton-Parker College
-Cambridge College of Healthcare &amp; Technology
+Cambridge College of Healthcare & Technology
 Central Georgia Technical College
 Chamberlain University-Georgia
 Chattahoochee Technical College
@@ -1467,7 +1467,7 @@ Empire Beauty School-Savannah
 Fort Valley State University
 Fortis College-Smyrna
 Georgia Career Institute
-Georgia College &amp; State University
+Georgia College & State University
 Georgia Gwinnett College
 Georgia Highlands College
 Georgia Institute of Cosmetology
@@ -1507,14 +1507,14 @@ Interactive College of Technology-Chamblee
 Interactive College of Technology-Gainesville
 Interactive College of Technology-Morrow
 Interdenominational Theological Center
-International School of Skin Nailcare &amp; Massage Therapy
+International School of Skin Nailcare & Massage Therapy
 Kennesaw State University
 Keune Academy by 124
 LaGrange College
 Lanier Technical College
 Life University
 Lincoln College of Technology-Marietta
-Luther Rice College &amp; Seminary
+Luther Rice College & Seminary
 MAK Beauty Institute
 MAK Beauty Institute - Duluth
 Mercer University
@@ -1568,7 +1568,7 @@ The Art Institute of Atlanta
 The Creative Circus
 Thomas University
 Toccoa Falls College
-Toni &amp; Guy Hairdressing Academy-Atlanta
+Toni & Guy Hairdressing Academy-Atlanta
 Truett McConnell University
 United Education Institute-Morrow
 University of Georgia
@@ -1591,7 +1591,7 @@ Hawaii Medical College
 Hawaii Pacific University
 Honolulu Community College
 IBS School of Cosmetology and Massage
-Institute of Clinical Acupuncture &amp; Oriental Med
+Institute of Clinical Acupuncture & Oriental Med
 Kapiolani Community College
 Kauai Community College
 Leeward Community College
@@ -1618,7 +1618,7 @@ College of Eastern Idaho
 College of Massage Therapy
 College of Southern Idaho
 College of Western Idaho
-Cosmetology School of Arts &amp; Sciences
+Cosmetology School of Arts & Sciences
 Eagle Gate College-Boise Campus
 Evans Hairstyling College-Rexburg
 Headmasters School of Hair Design
@@ -1631,7 +1631,7 @@ Nathan Layne Institute of Cosmetology
 New Saint Andrews College
 North Idaho College
 Northwest Nazarene University
-NYSMedical&amp;Dental Assistants - American Institute of Clinical Massage
+NYSMedical&Dental Assistants - American Institute of Clinical Massage
 Oliver Finley Academy of Cosmetology
 Paul Mitchell the School-Boise
 Paul Mitchell the School-Nampa
@@ -1687,7 +1687,7 @@ Columbia College - Freeport
 Columbia College - Lake County
 Columbia College Chicago
 Concordia University-Chicago
-Cosmetology &amp; Spa Academy
+Cosmetology & Spa Academy
 Cosmetology Concepts Niles
 Creative Touch Cosmetology School
 Danville Area Community College
@@ -1713,8 +1713,8 @@ First Institute of Travel, Inc.
 Flashpoint Chicago A Campus of Columbia College Hollywood
 Fox College
 Frontier Community College
-G Skin &amp; Beauty Institute
-G Skin &amp; Beauty Institute
+G Skin & Beauty Institute
+G Skin & Beauty Institute
 Garrett-Evangelical Theological Seminary
 Gem City College
 Governors State University
@@ -1852,7 +1852,7 @@ Taylor Business Institute
 Telshe Yeshiva-Chicago
 The Chicago School of Professional Psychology at Chicago
 The Salon Professional Academy
-The University of Aesthetics &amp; Cosmetology
+The University of Aesthetics & Cosmetology
 Toyota Technological Institute at Chicago
 Trenz Beauty Academy
 Tricoci University of Beauty Culture
@@ -1867,20 +1867,20 @@ Tricoci University of Beauty Culture-Peoria
 Tricoci University of Beauty Culture-Rockford
 Tri-County Beauty Academy
 Trinity Christian College
-Trinity College of Nursing &amp; Health Sciences
+Trinity College of Nursing & Health Sciences
 Trinity International University-Illinois
 Triton College
 Triton College - Intl Union of Operating Engr Local 399 Trning Fac.
 Universal Spa Training Academy
 Universal Technical Institute of Illinois Inc
-University of Aesthetics &amp; Cosmetology
+University of Aesthetics & Cosmetology
 University of Chicago
 University of Illinois Chicago
 University of Illinois Springfield
 University of Illinois Urbana-Champaign
 University of Notre Dame -
 University of Saint Mary of the Lake
-University of Spa &amp; Cosmetology Arts
+University of Spa & Cosmetology Arts
 University of St Francis
 VanderCook College of Music
 Verve College
@@ -1934,7 +1934,7 @@ Indiana University-South Bend
 Indiana University-Southeast
 Indiana Wellness College
 Indiana Wesleyan University-Marion
-Indiana Wesleyan University-National &amp; Global
+Indiana Wesleyan University-National & Global
 International Business College-Indianapolis
 Ivy Tech Community College
 Ivy Tech Community College-Bloomington
@@ -2232,7 +2232,7 @@ Lindsey Wilson College
 Louisville Presbyterian Theological Seminary
 Madisonville Community College
 Maysville Community and Technical College
-Medical Career &amp; Technical College
+Medical Career & Technical College
 MedQuest College
 Midway University
 Morehead State University
@@ -2254,7 +2254,7 @@ Simmons College of Kentucky
 Somerset Community College
 South Eastern Beauty Academy
 Southcentral Kentucky Community and Technical College
-Southeast Kentucky Community &amp; Technical College
+Southeast Kentucky Community & Technical College
 Spalding University
 Sullivan University
 Summit Salon Academy-Lexington
@@ -2269,13 +2269,13 @@ University of the Cumberlands
 West Kentucky Community and Technical College
 Western Kentucky University
 Academy of Interactive Entertainment
-Aveda Arts &amp; Sciences Institute-Baton Rouge
-Aveda Arts &amp; Sciences Institute-Covington
-Aveda Arts &amp; Sciences Institute-Lafayette
+Aveda Arts & Sciences Institute-Baton Rouge
+Aveda Arts & Sciences Institute-Covington
+Aveda Arts & Sciences Institute-Lafayette
 Avery James School of Cosmetology
 Ayers Career College
 Baton Rouge Community College
-Baton Rouge General Medical Center School of Nursing &amp; School of Radiologic Technology
+Baton Rouge General Medical Center School of Nursing & School of Radiologic Technology
 Baton Rouge School of Computers
 Blalock's Professional Beauty College
 Blue Cliff College
@@ -2298,8 +2298,8 @@ Cosmetology Training Center
 Crescent City Bartending School
 Delgado Community College
 Delta College Inc
-Delta College of Arts &amp; Technology
-Delta College of Arts &amp; Technology-Lafayette Campus
+Delta College of Arts & Technology
+Delta College of Arts & Technology-Lafayette Campus
 Delta College-Slidell Campus
 Denham Springs Beauty School
 Diesel Driving Academy-Baton Rouge
@@ -2324,7 +2324,7 @@ Louisiana Academy of Beauty
 Louisiana College
 Louisiana Culinary Institute
 Louisiana Delta Community College
-Louisiana State University and Agricultural &amp; Mechanical College
+Louisiana State University and Agricultural & Mechanical College
 Louisiana State University Health Sciences Center-New Orleans
 Louisiana State University Health Sciences Center-Shreveport
 Louisiana State University-Alexandria
@@ -2363,7 +2363,7 @@ Southeastern Louisiana University - Albert Cammon Middle School
 Southeastern Louisiana University - Destrahan High School
 Southeastern Louisiana University - EBR Parish School System Prof Dev
 Southeastern Louisiana University - St Amant High School
-Southern University and A &amp; M College
+Southern University and A & M College
 Southern University at New Orleans
 Southern University at Shreveport
 Southern University Law Center
@@ -2384,7 +2384,7 @@ University of Louisiana at Monroe
 University of New Orleans
 Vanguard College of Cosmetology-Baton Rouge
 Vanguard College of Cosmetology-Metairie
-VH Barber &amp; Styling Academy
+VH Barber & Styling Academy
 Xavier University of Louisiana
 Bates College
 Beal University
@@ -2400,7 +2400,7 @@ Empire Beauty School-Maine
 Husson University
 Institute for Doctoral Studies in the Visual Arts
 Kennebec Valley Community College
-Maine College of Art &amp; Design
+Maine College of Art & Design
 Maine College of Health Professions
 Maine Maritime Academy
 Maine Media College
@@ -2478,7 +2478,7 @@ Mount St. Mary's University
 Ner Israel Rabbinical College
 North American Trade Schools
 Notre Dame of Maryland University
-Omega Studios' School of Applied Recording Arts &amp; Sciences
+Omega Studios' School of Applied Recording Arts & Sciences
 Paul Mitchell the School-Jessup
 Prince George's Community College
 Salisbury University
@@ -2638,7 +2638,7 @@ Stonehill College
 Suffolk University
 The New England Conservatory of Music
 Thomas Aquinas College - New England
-Toni &amp; Guy Hairdressing Academy-Worcester
+Toni & Guy Hairdressing Academy-Worcester
 Tri County Regional Vocational Technical High School
 Tufts University
 University of Massachusetts Medical School Worcester
@@ -2689,7 +2689,7 @@ Concordia University Ann Arbor
 Cornerstone University
 Cranbrook Academy of Art
 Creative Hair School of Cosmetology
-D&amp;S School of Cosmetology
+D&S School of Cosmetology
 Davenport University
 Davenport University - Detroit
 Davenport University - Macomb CC
@@ -2781,7 +2781,7 @@ Nuvo College of Cosmetology
 Oakland Community College
 Oakland University
 Olivet College
-P&amp;A Scholars Beauty School
+P&A Scholars Beauty School
 Paul Mitchell The School-Farmington Hills
 Paul Mitchell the School-Grand Rapids
 Paul Mitchell the School-Great Lakes
@@ -2841,20 +2841,20 @@ Western Theological Seminary
 Yeshiva Gedolah of Greater Detroit
 Academy College
 Adler Graduate School
-Alexandria Technical &amp; Community College
+Alexandria Technical & Community College
 American Academy of Health and Wellness
 Anoka Technical College
 Anoka-Ramsey Community College
 Anoka-Ramsey Community College-Cambridge Campus
 Augsburg University
 Avalon School of Cosmetology
-Aveda Arts &amp; Sciences Institute Minneapolis
+Aveda Arts & Sciences Institute Minneapolis
 Aveda Institute Rochester
 Bemidji State University
 Bethany Global University
 Bethany Lutheran College
 Bethel University
-Bethlehem College &amp; Seminary
+Bethlehem College & Seminary
 Capella University
 Carleton College
 Central Lakes College-Brainerd
@@ -2913,7 +2913,7 @@ Northwestern Health Sciences University
 Nova Academy of Cosmetology
 Oak Hills Christian College
 PCI Academy-Plymouth
-Pine Technical &amp; Community College
+Pine Technical & Community College
 Rainy River Community College
 Rasmussen University-Blaine
 Rasmussen University-Bloomington
@@ -2984,7 +2984,7 @@ Millsaps College
 Mississippi College
 Mississippi Delta Community College
 Mississippi Gulf Coast Community College
-Mississippi Institute of Aesthetics Nails &amp; Cosmetology
+Mississippi Institute of Aesthetics Nails & Cosmetology
 Mississippi State University
 Mississippi University for Women
 Mississippi Valley State University
@@ -3058,7 +3058,7 @@ Culver-Stockton College
 DeVry University-Missouri
 Drury University
 Drury University-College of Continuing Professional Studies
-Ea La Mar's Cosmetology &amp; Barber College
+Ea La Mar's Cosmetology & Barber College
 East Central College
 Eden Theological Seminary
 Evangel University
@@ -3141,7 +3141,7 @@ St. Louis Med Tech
 State Fair Community College
 State Technical College of Missouri
 Stephens College
-Stevens-The Institute of Business &amp; Arts
+Stevens-The Institute of Business & Arts
 Summit Salon Academy Kansas City
 Texas County Technical College
 The Salon Professional Academy-St Charles
@@ -3219,7 +3219,7 @@ Mid-Plains Community College
 Myotherapy Institute
 Nebraska College of Technical Agriculture
 Nebraska Indian Community College
-Nebraska Methodist College of Nursing &amp; Allied Health
+Nebraska Methodist College of Nursing & Allied Health
 Nebraska Wesleyan University
 Northeast Community College
 Peru State College
@@ -3247,7 +3247,7 @@ Casal Institute of Nevada
 Chamberlain University-Nevada
 College of Southern Nevada
 DeVry University-Nevada
-Euphoria Institute of Beauty Arts &amp; Sciences-Summerlin
+Euphoria Institute of Beauty Arts & Sciences-Summerlin
 European Massage Therapy School-Las Vegas
 Great Basin College
 Institute of Professional Careers
@@ -3291,7 +3291,7 @@ Keene State College
 Lakes Region Community College
 Magdalen College
 Manchester Community College
-Michael's School of Hair Design &amp; Esthetics
+Michael's School of Hair Design & Esthetics
 Nashua Community College
 New England College
 New England School of Hair Design
@@ -3314,7 +3314,7 @@ Adult and Continuing Education-BCTS
 Advantage Career Institute
 American Institute
 American Institute of Alternative Medicine
-American Institute of Medical Sciences &amp; Education
+American Institute of Medical Sciences & Education
 American Institute-Cherry Hill
 American Institute-Clifton
 American Institute-Somerset
@@ -3346,7 +3346,7 @@ Centenary University
 Center for the Healing Arts
 Central Career Institute LLC
 Chamberlain University-New Jersey
-Christine Valmy International School of Esthetics &amp; Cosmetology
+Christine Valmy International School of Esthetics & Cosmetology
 County College of Morris
 Cutting Edge Academy
 DeVry University-New Jersey
@@ -3400,7 +3400,7 @@ Montclair State University
 Morris County Vocational School District
 National Career Institute
 New Brunswick Theological Seminary
-New Community Career &amp; Technical Institute
+New Community Career & Technical Institute
 New Jersey City University
 New Jersey Institute of Technology
 Ocean County College
@@ -3506,8 +3506,8 @@ Southwest Acupuncture College-Santa Fe
 Southwestern College
 Southwestern Indian Polytechnic Institute
 St. John's College
-Toni &amp; Guy Hairdressing Academy-Albuquerque
-Toni &amp; Guy Hairdressing Academy-Rio Rancho
+Toni & Guy Hairdressing Academy-Albuquerque
+Toni & Guy Hairdressing Academy-Rio Rancho
 University of New Mexico-Gallup Campus
 University of New Mexico-Los Alamos Campus
 University of New Mexico-Main Campus
@@ -3544,12 +3544,12 @@ Arrojo Cosmetology School
 ASA College
 Associated Beth Rivkah Schools
 Atelier Esthetique Institute of Esthetics
-Aveda Arts &amp; Sciences Institute-New York
+Aveda Arts & Sciences Institute-New York
 Bais Binyomin Academy
 Bais Medrash Elyon
 Bais Medrash of Dexter Park
 Bank Street College of Education
-Barber &amp; Beauty Institute of New York
+Barber & Beauty Institute of New York
 Bard College
 Bard College - Brooklyn Public Library
 Bard College - Coxsackie Correctional Facility
@@ -3576,15 +3576,15 @@ Brittany Beauty Academy
 Brittany Beauty Academy
 Brooklyn Law School
 Broome Delaware Tioga BOCES-Practical Nursing Program
-Bryant &amp; Stratton College-Albany
-Bryant &amp; Stratton College-Amherst
-Bryant &amp; Stratton College-Buffalo
-Bryant &amp; Stratton College-Greece
-Bryant &amp; Stratton College-Henrietta
-Bryant &amp; Stratton College-Online
-Bryant &amp; Stratton College-Southtowns
-Bryant &amp; Stratton College-Syracuse
-Bryant &amp; Stratton College-Syracuse North
+Bryant & Stratton College-Albany
+Bryant & Stratton College-Amherst
+Bryant & Stratton College-Buffalo
+Bryant & Stratton College-Greece
+Bryant & Stratton College-Henrietta
+Bryant & Stratton College-Online
+Bryant & Stratton College-Southtowns
+Bryant & Stratton College-Syracuse
+Bryant & Stratton College-Syracuse North
 Canisius College
 Capri Cosmetology Learning Centers
 Career School of NY
@@ -3593,12 +3593,12 @@ Cayuga County Community College
 Cayuga Onondaga BOCES-Practical Nursing Program
 Cazenovia College
 Center for Allied Health Education
-Center for Instruction, Technology &amp; Innovation
-Center for Ultrasound Research &amp; Education
+Center for Instruction, Technology & Innovation
+Center for Ultrasound Research & Education
 Central Yeshiva Beth Joseph
 Central Yeshiva Tomchei Tmimim Lubavitz
 Charles Stuart School of Diamond Setting
-Christine Valmy International School for Esthetics, Skin Care &amp; Makeup
+Christine Valmy International School for Esthetics, Skin Care & Makeup
 Circle in the Square Theatre School
 Clarkson University
 Clarkson University Capital Region Campus
@@ -3674,7 +3674,7 @@ Excelsior College
 Farmingdale State College
 Fashion Institute of Technology
 Finger Lakes Community College
-Finger Lakes Health College of Nursing &amp; Health Sciences
+Finger Lakes Health College of Nursing & Health Sciences
 Five Towns College
 Focus Personal Training Institute
 Fordham University
@@ -3719,7 +3719,7 @@ Lincoln Technical Institute-Whitestone
 Long Island Beauty School-Hauppauge
 Long Island Beauty School-Hempstead
 Long Island Business Institute
-Long Island Nail Skin &amp; Hair Institute
+Long Island Nail Skin & Hair Institute
 Long Island University
 Machzikei Hadath Rabbinical College
 Madison Oneida BOCES-Practical Nursing Program
@@ -3774,7 +3774,7 @@ New York Law School
 New York Medical Career Training Center
 New York Medical College
 New York School for Medical and Dental Assistants
-New York School of Esthetics &amp; Day Spa
+New York School of Esthetics & Day Spa
 New York School of Interior Design
 New York Seminary
 New York Theological Seminary
@@ -3931,7 +3931,7 @@ Wayne Finger Lakes BOCES-Practical Nursing Program
 Webb Institute
 Weill Medical College of Cornell University
 Wells College
-Westchester School for Medical &amp; Dental Assistants
+Westchester School for Medical & Dental Assistants
 Westchester School of Beauty Culture
 Western Suffolk BOCES
 Word of Life Bible Institute
@@ -4036,7 +4036,7 @@ High Point University
 Hood Theological Seminary
 Isothermal Community College
 James Sprunt Community College
-Johnson &amp; Wales University-Charlotte
+Johnson & Wales University-Charlotte
 Johnson C Smith University
 Johnston Community College
 Jung Tao School of Classical Chinese Medicine
@@ -4068,7 +4068,7 @@ MyComputerCareer.edu-Raleigh
 NASCAR Technical Institute
 Nash Community College
 No Grease Barber School
-North Carolina A &amp; T State University
+North Carolina A & T State University
 North Carolina Central University
 North Carolina State University at Raleigh
 North Carolina Wesleyan College
@@ -4139,8 +4139,8 @@ Cankdeska Cikana Community College
 Columbia College - Minot AFB
 Dakota College at Bottineau
 Dickinson State University
-Josef's School of Hair, Skin &amp; Body-Fargo
-Josef's School of Hair, Skin &amp; Body-Grand Forks
+Josef's School of Hair, Skin & Body-Fargo
+Josef's School of Hair, Skin & Body-Grand Forks
 Lake Region State College
 Lynnes Welding Training
 Lynnes Welding Training-Bismarck
@@ -4162,10 +4162,10 @@ University of North Dakota
 Valley City State University
 Williston State College
 Adult and Community Education-Hudson
-Air Force Institute of Technology-Graduate School of Engineering &amp; Management
+Air Force Institute of Technology-Graduate School of Engineering & Management
 Allegheny Wesleyan College
 Alliance Career Center
-Allstate Hairstyling &amp; Barber College
+Allstate Hairstyling & Barber College
 American Institute of Alternative Medicine
 Antioch College
 Antioch University
@@ -4187,13 +4187,13 @@ Belmont College
 Bluffton University
 Bowling Green State University-Firelands
 Bowling Green State University-Main Campus
-Brown &amp; Clermont Adult Career Campuses
+Brown & Clermont Adult Career Campuses
 Brown Aveda Institute-Mentor
 Brown Aveda Institute-Strongsville
-Bryant &amp; Stratton College-Akron
-Bryant &amp; Stratton College-Cleveland
-Bryant &amp; Stratton College-Parma
-Bryant &amp; Stratton College-Solon
+Bryant & Stratton College-Akron
+Bryant & Stratton College-Cleveland
+Bryant & Stratton College-Parma
+Bryant & Stratton College-Solon
 Buckeye Hills Career Center
 Buckeye Joint Vocational School
 Butler Technology and Career Development Schools
@@ -4210,7 +4210,7 @@ Chamberlain University-Ohio
 Chatfield College
 Choffin Career  and Technical Center
 Cincinnati College of Mortuary Science
-Cincinnati School of Barbering &amp; Hair Design
+Cincinnati School of Barbering & Hair Design
 Cincinnati School of Medical Massage
 Cincinnati State Technical and Community College
 Clark State College
@@ -4302,7 +4302,7 @@ Mahoning County Career and Technical Center
 Malone University
 Marietta College
 Marion Technical College
-Mason Anthony School of Cosmetology Arts &amp; Sciences
+Mason Anthony School of Cosmetology Arts & Sciences
 Medina County Career Center
 Mercy College of Ohio
 Meryma'at Barber College
@@ -4417,8 +4417,8 @@ Tri-County Adult Career Center
 Trinity Health System School of Nursing
 Tri-Rivers Career Center
 Tri-State Bible College
-Trumbull Career &amp; Technical Center
-Union Institute &amp; University
+Trumbull Career & Technical Center
+Union Institute & University
 United Theological Seminary
 University of Akron Main Campus
 University of Akron Wayne College
@@ -4476,7 +4476,7 @@ Eastern Oklahoma State College
 Enid Beauty College
 Eves College of Hairstyling
 Family of Faith Christian University
-Formations Institute of Cosmetology &amp; Barbering
+Formations Institute of Cosmetology & Barbering
 Francis Tuttle Technology Center
 Gordon Cooper Technology Center
 Great Plains Technology Center
@@ -4500,7 +4500,7 @@ Miller-Motte College-Platt College-Tulsa
 Moore Norman Technology Center
 Murray State College
 Northeast Technology Center
-Northeastern Oklahoma A&amp;M College
+Northeastern Oklahoma A&M College
 Northeastern State University
 Northern Oklahoma College
 Northwest Technology Center-Alva
@@ -4577,7 +4577,7 @@ Institute of Technology
 Johnny Matthew's Hairdressing Training School
 Klamath Community College
 Lane Community College
-Lewis &amp; Clark College
+Lewis & Clark College
 Linfield University-McMinnville Campus
 Linfield University-Online and Continuing Education
 Linfield University-School of Nursing
@@ -4595,7 +4595,7 @@ Northwest College-Medford
 Northwest College-Tualatin
 Oregon Coast Community College
 Oregon College of Oriental Medicine
-Oregon Health &amp; Science University
+Oregon Health & Science University
 Oregon Institute of Technology
 Oregon State University
 Oregon State University-Cascades Campus
@@ -4614,7 +4614,7 @@ Portland State University
 Premiere Aesthetics Institute
 Reed College
 Rogue Community College
-Sage School of Massage &amp; Esthetics
+Sage School of Massage & Esthetics
 Southern Oregon University
 Southwestern Oregon Community College
 Summit Salon Academy-Portland
@@ -4648,7 +4648,7 @@ Barber and Beauty Academy of Pennsylvania
 Barber School of Pittsburgh
 Beaver Falls Beauty Academy
 Bella Capelli Academy
-Berks Career &amp; Technology Center
+Berks Career & Technology Center
 Bloomsburg University of Pennsylvania
 Bryn Athyn College of the New Church
 Bryn Mawr College
@@ -4726,8 +4726,8 @@ Erie Institute of Technology Inc
 European Medical School of Massage
 Evangelical Theological Seminary
 Falcon Institute of Health and Science
-Fayette County Career &amp; Technical Institute -
-Fayette County Career &amp; Technical Institute Practical Nursing Program
+Fayette County Career & Technical Institute -
+Fayette County Career & Technical Institute Practical Nursing Program
 Forbes Road Career and Technology Center
 Fortis Institute-Forty Fort
 Fortis Institute-Scranton
@@ -4741,7 +4741,7 @@ Geneva College
 Gettysburg College
 Gratz College
 Great Lakes Institute of Technology
-Greater Altoona Career &amp; Technology Center
+Greater Altoona Career & Technology Center
 Greater Johnstown Career and Technology Center
 Greene County Career and Technology Center
 Grove City College
@@ -4781,7 +4781,7 @@ Lafayette College
 Lake Erie College of Osteopathic Medicine
 Lancaster Bible College
 Lancaster County Career and Technology Center
-Lancaster School of Cosmetology &amp; Therapeutic Bodywork
+Lancaster School of Cosmetology & Therapeutic Bodywork
 Lancaster Theological Seminary
 Lansdale School of Business
 Lansdale School of Cosmetology Inc
@@ -4878,7 +4878,7 @@ Professional Academy of Cosmetology
 Reading Area Community College
 Reading Hospital School of Health Sciences
 Reconstructionist Rabbinical College
-Relay Graduate School of Education - Philadelphia &amp; Camden
+Relay Graduate School of Education - Philadelphia & Camden
 Robert Morris University
 Rosedale Technical College
 Rosemont College
@@ -4896,7 +4896,7 @@ Shippensburg University of Pennsylvania
 Slippery Rock University of Pennsylvania
 Somerset County Technology Center
 South Hills Beauty Academy
-South Hills School of Business &amp; Technology
+South Hills School of Business & Technology
 South Hills School of Business and Technology-Altoona
 St Lukes Hospital School of Nursing
 Strayer University-Allentown Campus
@@ -4952,14 +4952,14 @@ Venus Beauty Academy
 Vet Tech Institute
 Villanova University
 Walnut Hill College
-Washington &amp; Jefferson College
+Washington & Jefferson College
 Washington Health System School of Nursing
 Waynesburg University
 Welder Training and Testing Institute
 West Chester University of Pennsylvania
 West Virginia Junior College-United Career Institute
 West Virginia Junior College-United Career Institute
-Western Area Career &amp; Technology Center
+Western Area Career & Technology Center
 Western Pennsylvania Hospital School of Nursing
 Westminster College
 Westminster Theological Seminary
@@ -4972,7 +4972,7 @@ Wilson College
 Won Institute of Graduate Studies
 Yeshivath Beth Moshe
 York College of Pennsylvania
-York County School of Technology-Adult &amp; Continuing Education
+York County School of Technology-Adult & Continuing Education
 YTI Career Institute-Altoona
 YTI Career Institute-York
 Brown University
@@ -4980,9 +4980,9 @@ Bryant University
 College Unbound
 Community College of Rhode Island
 Empire Beauty School-Warwick
-IYRS School of Technology &amp; Trades
-Johnson &amp; Wales University-Online
-Johnson &amp; Wales University-Providence
+IYRS School of Technology & Trades
+Johnson & Wales University-Online
+Johnson & Wales University-Providence
 Lincoln Technical Institute-Lincoln
 MotoRing Technical Training Institute
 New England Institute of Technology
@@ -4995,7 +4995,7 @@ Rob Roy Academy - Woonsocket
 Roger Williams University
 Roger Williams University School of Law
 Salve Regina University
-Toni &amp; Guy Hairdressing Academy-Cranston
+Toni & Guy Hairdressing Academy-Cranston
 University of Rhode Island
 Academy for Careers and Technology
 Academy of Hair Technology
@@ -5181,7 +5181,7 @@ Lipscomb University
 Love Beauty School Inc
 Maryville College
 Massage Institute of Memphis
-Master's Barber &amp; Styling College
+Master's Barber & Styling College
 Meharry Medical College
 Memphis Theological Seminary
 Meridian Institute of Surgical Assisting
@@ -5308,7 +5308,7 @@ Austin College
 Austin Community College District
 Austin Graduate School of Theology
 Austin Presbyterian Theological Seminary
-Aveda Arts &amp; Sciences Institute-San Antonio
+Aveda Arts & Sciences Institute-San Antonio
 Avenue Five Institute
 Avenue Five Institute-South Austin Campus
 Aviation Institute of Maintenance-Dallas
@@ -5362,12 +5362,12 @@ Cortiva Institute-Arlington
 Cosmetology Academy of Texarkana
 Covenant School of Nursing and Allied Health
 Criswell College
-CTK Healthcare &amp; Career Institute
+CTK Healthcare & Career Institute
 Culinary Institute Inc
 Culinary Institute of America, San Antonio
 CyberTex Institute of Technology
 Dallas Baptist University
-Dallas Barber &amp; Stylist College
+Dallas Barber & Stylist College
 Dallas Christian College
 Dallas College
 Dallas Institute of Funeral Service
@@ -5390,11 +5390,11 @@ Fort Worth Beauty School
 Fortis College
 Fortis Institute
 Frank Phillips College
-GA Beauty &amp; Barber School
+GA Beauty & Barber School
 Galen College of Nursing-San Antonio
 Galen Health Institutes-Austin Campus
 Galveston College
-Gemini School of Visual Arts &amp; Communication
+Gemini School of Visual Arts & Communication
 Grace School of Theology
 Grayson College
 Hallmark University
@@ -5420,7 +5420,7 @@ International Beauty College
 Jacksonville College-Main Campus
 Jarvis Christian University
 Jay's Technical Institute
-K &amp; G 5 Star Barber College
+K & G 5 Star Barber College
 KD Conservatory College of Film and Dramatic Arts
 Kilgore College
 Lamar Institute of Technology
@@ -5447,8 +5447,8 @@ MediaTech Institute-Dallas
 MediaTech Institute-Houston
 Mei Barber School
 Messenger College
-Miami International University of Art &amp; Design-Art Institute Dallas
-Michael's Barber &amp; Hair Stylist Academy
+Miami International University of Art & Design-Art Institute Dallas
+Michael's Barber & Hair Stylist Academy
 Mid Cities Barber College
 Midland College
 Midwestern State University
@@ -5511,7 +5511,7 @@ Pima Medical Institute-El Paso
 Pima Medical Institute-Houston
 Pima Medical Institute-San Antonio
 Pipo Academy of Hair Design
-Prairie View A &amp; M University
+Prairie View A & M University
 Quest College
 Ranger College
 Relay Graduate School of Education - Dallas-Fort Worth
@@ -5524,7 +5524,7 @@ Remington College-North Houston Campus
 Rice University
 Rio Grande Valley College
 Saint Edward's University
-Salon &amp; Spa Institute
+Salon & Spa Institute
 Salon Boutique Academy
 Salon Professional Academy of San Antonio
 Sam Houston State University
@@ -5533,7 +5533,7 @@ San Jacinto College-North Campus
 San Jacinto College-South Campus
 San Jacinto Community College
 San Jacinto Community College District - Generation Park Campus
-School of Automotive Machinists &amp; Technology
+School of Automotive Machinists & Technology
 Schreiner University
 Sebring Career Schools-Houston
 Sebring Career Schools-Huntsville
@@ -5571,7 +5571,7 @@ Southwestern University
 St Philip's College
 St. Mary's University
 Stephen F Austin State University
-Strand Institute of Beauty &amp; Esthetics
+Strand Institute of Beauty & Esthetics
 Strayer University-Cedar Hill
 Strayer University-Northwest Houston Campus
 Strayer University-San Antonio
@@ -5582,15 +5582,15 @@ Tarleton State University
 Tarrant County College District
 Temple College
 Texarkana College
-Texas A &amp; M International University
-Texas A &amp; M University Health Science Center
-Texas A &amp; M University-College Station
-Texas A &amp; M University-Commerce
-Texas A &amp; M University-Corpus Christi
-Texas A &amp; M University-Kingsville
-Texas A&amp;M University-Central Texas
-Texas A&amp;M University-San Antonio
-Texas A&amp;M University-Texarkana
+Texas A & M International University
+Texas A & M University Health Science Center
+Texas A & M University-College Station
+Texas A & M University-Commerce
+Texas A & M University-Corpus Christi
+Texas A & M University-Kingsville
+Texas A&M University-Central Texas
+Texas A&M University-San Antonio
+Texas A&M University-Texarkana
 Texas Barber College
 Texas Barber College - Branch Campus #1
 Texas Barber College - Branch Campus #2
@@ -5645,9 +5645,9 @@ The University of Texas Medical Branch at Galveston
 The University of Texas Permian Basin
 The University of Texas Rio Grande Valley
 The Vocational Nursing Institute Inc
-Tint School of Makeup &amp; Cosmetology
+Tint School of Makeup & Cosmetology
 Tint School of Makeup and Cosmetology-Dallas
-Toni &amp; Guy Hairdressing Academy-Plano
+Toni & Guy Hairdressing Academy-Plano
 Tonsorial Arts Barber College
 Total Transformation Institute of Cosmetology
 Trend Barber College
@@ -5657,11 +5657,11 @@ Trinity Valley Community College
 Tri-State Cosmetology Institute
 Tulsa Welding School-Houston
 Tyler Junior College
-UCAS University of Cosmetology Arts &amp; Sciences
-UCAS University of Cosmetology Arts &amp; Sciences-Harlingen
-UCAS University of Cosmetology Arts &amp; Sciences-La Joya
-UCAS University of Cosmetology Arts &amp; Sciences-McAllen
-UCAS University of Cosmetology Arts &amp; Sciences-San Antonio 410
+UCAS University of Cosmetology Arts & Sciences
+UCAS University of Cosmetology Arts & Sciences-Harlingen
+UCAS University of Cosmetology Arts & Sciences-La Joya
+UCAS University of Cosmetology Arts & Sciences-McAllen
+UCAS University of Cosmetology Arts & Sciences-San Antonio 410
 Universal Technical Institute of Texas Inc.
 Universal Technical Institute-Dallas Fort Worth
 Universal Technical Institute-West Texas
@@ -5693,7 +5693,7 @@ Wade Gordon Hairdressing Academy-Lubbock
 Wayland Baptist University
 Weatherford College
 West Coast University-Dallas
-West Texas A &amp; M University
+West Texas A & M University
 Western Technical College
 Western Technical College
 Western Texas College
@@ -5708,7 +5708,7 @@ AmeriTech College-Draper
 Arizona College of Nursing-Salt Lake City
 Avalon Institute-Layton
 Aveda Institute-Provo
-Bonnie Joseph Academy of Cosmetology &amp; Barbering
+Bonnie Joseph Academy of Cosmetology & Barbering
 Bridgerland Technical College
 Brigham Young University
 Broadview College
@@ -5756,7 +5756,7 @@ Taylor Andrews Academy of Hair Design-West Jordan
 Taylor Andrews Academy-St George
 The Barber School
 Tooele Technical College
-Top Nails &amp; Hair Beauty School
+Top Nails & Hair Beauty School
 Uintah Basin Technical College
 University of Utah
 Utah County Campus
@@ -5787,7 +5787,7 @@ Vermont Law School
 Vermont Technical College
 Advanced Technology Institute
 Allegiance Beauty School
-American Massage &amp; Bodywork Institute
+American Massage & Bodywork Institute
 American National University
 Another Level Barbering and Cosmetology School
 Appalachian College of Pharmacy
@@ -5805,9 +5805,9 @@ Bon Secours Memorial College of Nursing
 Bon Secours St Mary's Hospital School of Medical Imaging
 Bridgewater College
 Brightpoint Community College
-Bryant &amp; Stratton College-Hampton
-Bryant &amp; Stratton College-Richmond
-Bryant &amp; Stratton College-Virginia Beach
+Bryant & Stratton College-Hampton
+Bryant & Stratton College-Richmond
+Bryant & Stratton College-Virginia Beach
 Cayce/Reilly School of Massage
 Centra College
 Central School of Practical Nursing
@@ -5844,7 +5844,7 @@ ECPI University-Richmond South
 ECPI University-Richmond West
 ECPI University-Virginia Beach Health Sciences
 Edward Via College of Osteopathic Medicine
-Emory &amp; Henry College
+Emory & Henry College
 Empire Beauty School-Midlothian
 Empire Beauty School-Newport News
 Empire Beauty School-Richmond
@@ -5894,7 +5894,7 @@ Regent University
 Richard Bland College
 Riverside College of Health Careers
 Roanoke College
-Rudy &amp; Kelly Academy, A Paul Mitchell Partner School
+Rudy & Kelly Academy, A Paul Mitchell Partner School
 Sentara College of Health Sciences
 Shenandoah University
 South University-Richmond
@@ -5946,18 +5946,18 @@ Virginia Wesleyan University
 Virginia Western Community College
 Washington and Lee University
 Wave Leadership College
-William &amp; Mary
+William & Mary
 Wytheville Community College
 Academy of Interactive Entertainment
 Antioch University-Seattle
-Aveda Arts &amp; Sciences Institute Seattle
+Aveda Arts & Sciences Institute Seattle
 Aveda Institute Portland-Vancouver Campus
 Bastyr University
 Bates Technical College
 Bellevue College
 Bellingham Technical College
 Big Bend Community College
-BJ's Beauty &amp; Barber College
+BJ's Beauty & Barber College
 Carrington College-Spokane
 Cascadia College
 Central Washington University
@@ -5975,7 +5975,7 @@ DigiPen Institute of Technology
 Divers Institute of Technology
 Eastern Washington University
 Edmonds College
-Elite Cosmetology, Barber &amp; Spa Academy
+Elite Cosmetology, Barber & Spa Academy
 Everett Community College
 Evergreen Beauty and Barber College-Everett
 Faith International University
@@ -5997,7 +5997,7 @@ Lake Washington Institute of Technology
 Lower Columbia College
 Moody Bible Institute - Spokane
 North Seattle College
-Northwest College of Art &amp; Design
+Northwest College of Art & Design
 Northwest HVAC/R Training Center
 Northwest Indian College
 Northwest School of Wooden Boat Building
@@ -6034,8 +6034,8 @@ Stylemaster College of Hair Design
 Summit Salon Academy
 Tacoma Community College
 The Evergreen State College
-The Seattle School of Theology &amp; Psychology
-Toni &amp; Guy Hairdressing Academy-Shoreline
+The Seattle School of Theology & Psychology
+Toni & Guy Hairdressing Academy-Shoreline
 University of Puget Sound
 University of Washington-Bothell Campus
 University of Washington-Seattle Campus
@@ -6064,14 +6064,14 @@ Ben Franklin Career Center
 Bethany College
 Blue Ridge Community and Technical College
 Bluefield State College
-BridgeValley Community &amp; Technical College
+BridgeValley Community & Technical College
 Cabell County Career Technology Center
 Carver Career Center
 Catholic Distance University
 Charleston School of Beauty Culture
 Clarksburg Beauty Academy and School of Massage Therapy
 Concord University
-Davis &amp; Elkins College
+Davis & Elkins College
 Eastern West Virginia Community and Technical College
 Fairmont State University
 Fayette Institute of Technology
@@ -6135,9 +6135,9 @@ Bella Academy of Cosmetology
 Bellin College
 Beloit College
 Blackhawk Technical College
-Bryant &amp; Stratton College-Bayshore
-Bryant &amp; Stratton College-Racine
-Bryant &amp; Stratton College-Wauwatosa
+Bryant & Stratton College-Bayshore
+Bryant & Stratton College-Racine
+Bryant & Stratton College-Wauwatosa
 Cardinal Stritch University
 Carroll University
 Carthage College
@@ -6168,7 +6168,7 @@ Mid-State Technical College
 Midwest College of Oriental Medicine-Racine
 Milwaukee Area Technical College
 Milwaukee Career College
-Milwaukee Institute of Art &amp; Design
+Milwaukee Institute of Art & Design
 Milwaukee School of Engineering
 Moraine Park Technical College
 Mount Mary University

@@ -3,10 +3,15 @@ import csv
 import re
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
+import time
 
+driver = webdriver.Chrome()
 
 # Helper Functions
 # ----------------------------------------------------------------------------------------------------------------------
+
+
 def extractInfoFromGraph(element: list):
     """Generates a list of information given a list of WebElements from an image
 
@@ -224,7 +229,7 @@ def elementSlice(element: list, start: str, end: str):
     return array
 
 
-def elementSplit(element: str, condition1: str, condition2: str, condition3: str):
+def elementSplit(element, condition1: str, condition2: str, condition3: str):
     """Splits the element based on condition1, condition2 and condition3, returns false if none of the conditions are met
 
     Args:
@@ -290,11 +295,48 @@ def cleanList(element: list):
     """
     return list(filter(None, element))
 
+# --------------------------------------------Navigation Functions---------------------------------------------------
+
+
+def navigateToSite():
+    def processState(state, namesOfColleges):
+        stateLink = "https://nces.ed.gov/collegenavigator/?s="+state
+
+        for index in range(1, 100):
+            pageLink = stateLink + "&pg=" + str(index)
+            driver.get(pageLink)
+            time.sleep(1)
+            try:
+                findLinksToIndividualCollege(namesOfColleges)
+            except:
+                break
+
+    def findLinksToIndividualCollege(namesOfColleges):
+        tableTag = driver.find_element(By.CLASS_NAME, "resultsTable")
+        tbodyTag = tableTag.find_element(By.TAG_NAME, "tbody")
+        trTags = tbodyTag.find_elements(By.XPATH, "./*")
+        for trTag in trTags:
+            tdTag = trTag.find_elements(By.XPATH, "./*")[1]
+            aTag = tdTag.find_element(By.TAG_NAME, "a")
+            name = aTag.find_element(By.TAG_NAME, "strong").text
+            print('Analyzing '+name)
+            aTag.click()
+            scraper(name, 'collegeinfo.csv')
+            driver.execute_script('window.history.go(-1)')
+
+    def start():
+        states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV",
+                  "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "AS", "FM", "GU", "MH", "MP", "PW", "PR", "VI"]
+        namesOfColleges = []
+        for state in states:
+            processState(state, namesOfColleges)
+
+    start()
 
 # ----------------------------------------------------------------------------------------------------------------------
 
 
-def scrapper(college: str, filename: str):
+def scraper(college: str, filename: str):
     """Goes to the CollegeNavigator from the National Center for Education Statistics website and scrapes the data for each college in the list (listOfColleges.txt) and writes it to a csv file(collegeinfo.csv)
 
     Args:
@@ -304,12 +346,11 @@ def scrapper(college: str, filename: str):
     Returns:
         bool: Returns True if the college was successfully scraped
     """
-    driver = webdriver.Chrome()
-    driver.get("https://nces.ed.gov/collegenavigator/")
-
     file = open(filename, 'a+', newline='')
     writer = csv.writer(file)
 
+    driver.find_element(
+        'xpath', "//div[@class='fadeyell']/div[@class='expandcollapse colorful']/a[1]").click()
     # Write header rows
     if os.stat(filename).st_size == 0:
         writer.writerow(['College Name', 'Address', 'Phone#', 'Website', 'Type', 'Degrees', 'Campus Type', 'Campus Housing',
@@ -329,62 +370,25 @@ def scrapper(college: str, filename: str):
                          'Drug Abuse Arrests', 'Liquor Law Violation Arrests', 'Weapons Disciplinary Action', 'Drug Abuse Disciplinary Action', 'Liquor Law Violation Disciplinary Action', 'Programs'])
 
     # Inputs each college from a list of colleges and goes to their respective pages
-    collegeinput = driver.find_element(
-        "xpath", "//input[@name='ctl00$cphCollegeNavBody$ucSearchMain$txtName']")
-    collegeinput.send_keys(college)
-    driver.find_element(
-        'xpath', "//input[@name='ctl00$cphCollegeNavBody$ucSearchMain$btnSearch']").click()
-    # Clicks on correct college
-    numofresults = len(driver.find_elements(
-        'xpath', "//table[@id='ctl00_cphCollegeNavBody_ucResultsMain_tblResults']/tbody/tr"))
-    basepathend = "/td[2]/a/strong"
-    yclass = "//tbody/tr[@class='resultsY']"
-    wclass = "//tbody/tr[@class='resultsW']"
-    counter = 0
-    # Alternating loop
-    for i in range(numofresults):
-        if i % 2 == 0:
-            counter += 1
-            if driver.find_element('xpath', wclass+'['+str(counter)+']'+basepathend).text + '\n' == college:
-                driver.find_element(
-                    'xpath', wclass+'['+str(counter)+']'+basepathend).click()
-                break
-        else:
-            if driver.find_element('xpath', yclass+'['+str(counter)+']'+basepathend).text + '\n' == college:
-                driver.find_element(
-                    'xpath', yclass+'['+str(counter)+']'+basepathend).click()
-                break
-    try:
-        driver.find_element(
-            'xpath', "//tbody/tr[@class='resultsW']/td[2]/a/strong").click()
-    except NoSuchElementException:
-        pass
-    try:
-        driver.find_element(
-            'xpath', "//div[@class='expandcollapse colorful']/a[1]").click()
-    except NoSuchElementException:
-        print('Error in pressing expand all button with: ' +
-              college + ' skipping...')
-        return False
+
     # Datasets -----------------------------------------------------------------------------------
-    generalinfo = driver.find_element(
-        'xpath', '//div[@id="ctl00_cphCollegeNavBody_ucInstitutionMain_divNPC"]').text
-    dashboarddataset = elementToList(driver.find_elements(
-        'xpath', "//div[2]/table[@class='layouttab']/tbody/tr"))
-    tuitiondataset = elementToList(driver.find_elements(
-        'xpath', "//div[@id = 'divctl00_cphCollegeNavBody_ucInstitutionMain_ctl00']/div[@class = 'tabconstraint']/table[@class = 'tabular']/tbody/tr/td"))
-    admissiondataset = elementToList(driver.find_elements(
-        'xpath', '//div[@id="divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04"]/div/table/tbody/tr/td'))
-    graphdataset = driver.find_elements(
-        'xpath', '//table[@class="graphtabs"]/tbody/tr/td/img')
-    aiddataset = elementToList(driver.find_elements(
-        'xpath', "//div[@id='RightContent']/div[9]/div[@id='finaid']/div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl01']/div/table/tbody/tr/td"))
+    try:
+        dashboarddataset = elementToList(driver.find_elements(
+            'xpath', "//div[2]/table[@class='layouttab']/tbody/tr"))
+    except NoSuchElementException:
+        print(college + ' is missing vital data (dashboard info), skipping...')
+
     # -------------------------------------------------------------------------------------------
+    with open('collegeinfo.csv', 'rt') as f:
+        s = f.read()
+        if college in s:
+            print(college + ' already scraped, skipping...')
+            return True
     # Check college/university validity
     if search(dashboarddataset, 'Related Institutions') == True and search(dashboarddataset, 'parent institution') == False:
         print(college + " is a branch of a parent college, skipping...")
         file.close()
-        driver.quit()
+        # driver.quit()
         return False
     try:
         if 'RETENTION' not in driver.find_element('xpath', "//div[@id='retgrad']/div[@class='collapsing2']").text:
@@ -418,6 +422,19 @@ def scrapper(college: str, filename: str):
         'xpath', '//div[@id="divctl00_cphCollegeNavBody_ucInstitutionMain_ctl11"]/div/table/tbody/tr/td'))
     genderdemographicdataset = driver.find_element(
         'xpath', "//table[@class='graphtabs'][1]/tbody/tr/td[2]/img")
+    # Datasets
+    generalinfo = driver.find_element(
+        'xpath', '//div[@id="ctl00_cphCollegeNavBody_ucInstitutionMain_divNPC"]').text
+    dashboarddataset = elementToList(driver.find_elements(
+        'xpath', "//div[2]/table[@class='layouttab']/tbody/tr"))
+    tuitiondataset = elementToList(driver.find_elements(
+        'xpath', "//div[@id = 'divctl00_cphCollegeNavBody_ucInstitutionMain_ctl00']/div[@class = 'tabconstraint']/table[@class = 'tabular']/tbody/tr/td"))
+    admissiondataset = elementToList(driver.find_elements(
+        'xpath', '//div[@id="divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04"]/div/table/tbody/tr/td'))
+    graphdataset = driver.find_elements(
+        'xpath', '//table[@class="graphtabs"]/tbody/tr/td/img')
+    aiddataset = elementToList(driver.find_elements(
+        'xpath', "//div[@id='RightContent']/div[9]/div[@id='finaid']/div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl01']/div/table/tbody/tr/td"))
     # --------------------------------------------------Data----------------------------------------------------------------
     address = elementSplit(driver.find_element(
         'xpath', "//div[@class='collegedash']/div[2]/span").text, '\n', None, None)[1]
@@ -732,12 +749,12 @@ def scrapper(college: str, filename: str):
     #----------------------------------------------------------------------------------------------#
 
     if 'RETENTION' in driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl05']/div[@class='tabconstraint']/div[1]").text:
-        retentionrate = elementSplit(
-            findElementInGraph(graphdataset, 'retention'), ':\n', ': ', '\n')[2]
-        graduationrate = elementSplit(
-            findElementInGraph(graphdataset, 'graduation rate'), ':\n', ': ', '\n')[2]
-        transferrate = elementSplit(
-            findElementInGraph(graphdataset, 'Transfer-out rate'), ':\n', ': ', '\n')[4]
+        retentionrate = findElement(elementSplit(
+            findElementInGraph(graphdataset, 'retention'), ':\n', ': ', '\n'), 'Student retention', '%', 2)
+        graduationrate = findElement(elementSplit(
+            findElementInGraph(graphdataset, 'graduation rate'), ':\n', ': ', '\n'), 'Overall graduation rate', '%', 1, False, True)
+        transferrate = findElement(elementSplit(
+            findElementInGraph(graphdataset, 'Transfer-out rate'), ':\n', ': ', '\n'), 'Transfer-out rate', '%', 1)
         gradratemale = findElement(elementSplit(
             findElementInGraph(graphdataset, 'Graduation Rate by Gender'), ':\n', ': ', '\n'), 'Male', '%', 1)
         gradratefemale = findElement(elementSplit(
@@ -834,19 +851,13 @@ def scrapper(college: str, filename: str):
 
     # Clean up
     file.close()
-    driver.quit()
+    # driver.quit()
     return True
 
 
-def main(file):
-    collegelist = open(file, 'r')
-    while True:
-        college = collegelist.readline()
-        if not college:
-            break
-        print('Now analyzing: ' + college)
-        scrapper(college, 'collegeinfo.csv')
-    collegelist.close()
+def main():
+    navigateToSite()
+    driver.quit()
 
 
-main('testListColleges.txt')
+main()
