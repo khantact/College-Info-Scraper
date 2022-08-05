@@ -348,7 +348,9 @@ def scraper(college: str, filename: str):
     """
     file = open(filename, 'a+', newline='')
     writer = csv.writer(file)
-
+    # Testing
+    # driver.get(
+    #     'https://nces.ed.gov/collegenavigator/?q=Oklahoma+City+Community+College&s=all&id=207449')
     driver.find_element(
         'xpath', "//div[@class='fadeyell']/div[@class='expandcollapse colorful']/a[1]").click()
     # Write header rows
@@ -379,7 +381,7 @@ def scraper(college: str, filename: str):
         print(college + ' is missing vital data (dashboard info), skipping...')
 
     # -------------------------------------------------------------------------------------------
-    with open('collegeinfo.csv', 'rt') as f:
+    with open(filename, 'rt') as f:
         s = f.read()
         if college in s:
             print(college + ' already scraped, skipping...')
@@ -445,7 +447,7 @@ def scraper(college: str, filename: str):
     type = driver.find_element(
         'xpath', "//div[2]/table[@class='layouttab']/tbody/tr[3]/td[2]").text
     awardsoffered = array_toString(cleanList(elementSplit(driver.find_element(
-        'xpath', "//div[@class='collegedash']/div[2]/table[@class='layouttab']/tbody/tr[4]/td[2]").text, "([A-Z][^A-Z]*)", '\n', '')))
+        'xpath', "//div[@class='collegedash']/div[2]/table[@class='layouttab']/tbody/tr[4]/td[2]").text, '\n', None, None)))
     campussetting = driver.find_element(
         'xpath', "//table[@class='layouttab']/tbody/tr[5]/td[2]").text
     campushousing = driver.find_element(
@@ -503,7 +505,7 @@ def scraper(college: str, filename: str):
     roomandboard = (findElement(
         cleanList(tuitiondataset), 'Room and board', '%', 4))
     totalexpenses = (findElement(
-        cleanList(tuitiondataset), '% CHANGE', '%', 6))
+        cleanList(tuitiondataset), 'TOTAL EXPENSES', '$', -1, False, False, 3))
 
     # -----------------------------------------------------Tuition----------------------------------------------------------------
     instatetuition = 'n/a'
@@ -513,14 +515,14 @@ def scraper(college: str, filename: str):
     g_instatetuition = 'n/a'
     g_outofstatetuition = 'n/a'
     try:
-        if 'In-state' not in (cleanList(tuitiondataset)) and '%' in cleanList(tuitiondataset):
+        if search(cleanList(tuitiondataset), 'In-state') == False and search(cleanList(tuitiondataset), '%') == True:
             tuition = findElement(cleanList(tuitiondataset),
                                   'Tuition and fees', '%', 4)
-        if 'In-state' not in cleanList(tuitiondataset) and '%' not in cleanList(tuitiondataset):
+        if search(cleanList(tuitiondataset), 'In-state') == False and search(cleanList(tuitiondataset), '%') == False:
             tuition = findElement(cleanList(tuitiondataset),
                                   'Tuition', 'Fees', 1, True)
     except NoSuchElementException:
-        tuition = 'n/a'
+        pass
     try:
         if search(cleanList(tuitiondataset), 'Graduate student tuition'):
             if search(cleanList(tuitiondataset), 'In-state tuition', True, True) and search(tuitiondataset, '%'):
@@ -539,9 +541,18 @@ def scraper(college: str, filename: str):
     except NoSuchElementException:
         pass
     try:
-        if search(aiddataset, 'Grant or scholarship aid'):
+        if search(cleanList(tuitiondataset), 'Tuition', True):
+            avgtuition = findElement(
+                cleanList(tuitiondataset), 'Tuition', '$', 1, False, True)
+    except NoSuchElementException:
+        pass
+    try:
+        if search(aiddataset, 'Grant or scholarship aid') and re.search('\$[1-9]', findElement(aiddataset, 'Grant or scholarship aid', '$', -1)):
             avg_aid = findElement(
                 aiddataset, 'Grant or scholarship aid', '$', -1)
+        elif search(aiddataset, 'Grant or scholarship aid') and re.search('\$[1-9]', findElement(aiddataset, 'Grant or scholarship aid', '$', -1, False, True, 1)):
+            avg_aid = findElement(
+                aiddataset, 'Grant or scholarship aid', '$', -1, False, True, 1)
         else:
             avg_aid = 'n/a'
     except NoSuchElementException:
@@ -655,13 +666,14 @@ def scraper(college: str, filename: str):
         foreigncountriesresidence = 'n/a'
     #----------------------------------------------------------------------------------------------#
     openadmission = 'open admission policy contact institution for more information'
-    applicationfee = 'open admission policy contact institution for more information'
+    applicationfee = 'n/a'
     if '$' in driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']").text:
         applicationfee = driver.find_element(
             'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']/table[@class='tabular'][1]/tbody/tr/td[2]").text
     if 'open admission policy' in driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']").text:
-        applicationfee = driver.find_element(
-            'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']").text
+        if '$' in driver.find_element('xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']").text:
+            applicationfee = findElement(elementSplit(driver.find_element(
+                'xpath', "//div[@id='divctl00_cphCollegeNavBody_ucInstitutionMain_ctl04']/div[@class='tabconstraint']").text, ': ', '\n', None), 'application fee', '$', 1)
         totalapplicants = openadmission
         percentadmitted = openadmission
         admittedandenrolled = openadmission
@@ -786,6 +798,31 @@ def scraper(college: str, filename: str):
         gradratetwoormore = ''
         gradrateunknown = ''
         gradratealien = ''
+        try:
+            retentionrate = findElement(elementSplit(
+                findElementInGraph(graphdataset, 'retention'), ':\n', ': ', '\n'), 'Student retention', '%', 2)
+            graduationrate = findElement(elementSplit(
+                findElementInGraph(graphdataset, 'graduation rate'), ':\n', ': ', '\n'), 'Overall graduation rate', '%', 1, False, True)
+            transferrate = findElement(elementSplit(
+                findElementInGraph(graphdataset, 'Transfer-out rate'), ':\n', ': ', '\n'), 'Transfer-out rate', '%', 1)
+            gradratemale = findElement(elementSplit(
+                findElementInGraph(graphdataset, 'Graduation Rate by Gender'), ':\n', ': ', '\n'), 'Male', '%', 1)
+            gradratefemale = findElement(elementSplit(
+                findElementInGraph(graphdataset, 'Graduation Rate by Gender'), ':\n', ': ', '\n'), 'Female', '%', 1)
+            gradrate = elementSplit(
+                findElementInGraph(graphdataset, 'Graduation Rate by Race/Ethnicity'), ':\n', ': ', '\n')
+            gradrateindiannative = findElement(
+                gradrate, 'American Indian', '%', 1)
+            gradrateasian = findElement(gradrate, 'Asian', '%', 1)
+            gradrateblack = findElement(gradrate, 'Black', '%', 1)
+            gradratehispanic = findElement(gradrate, 'Hispanic', '%', 1)
+            gradratehawaiian = findElement(gradrate, 'Native Hawaiian', '%', 1)
+            gradratewhite = findElement(gradrate, 'White', '%', 1)
+            gradratetwoormore = findElement(gradrate, 'Two or more', '%', 1)
+            gradrateunknown = findElement(gradrate, 'unknown', '%', 1)
+            gradratealien = findElement(gradrate, 'alien', '%', 1)
+        except NoSuchElementException:
+            pass
 
         #-----------------------------------Crime Statistics----------------------------------------------#
     murders = findElement(
@@ -844,7 +881,7 @@ def scraper(college: str, filename: str):
                drugsdisciplinaryactions, liquordisciplinaryactions]
 
     for i in range(len(csvinfo)):
-        if csvinfo[i] == False or csvinfo[i] == '' or csvinfo[i] == '�':
+        if csvinfo[i] == False or csvinfo[i] == '' or csvinfo[i] == '�' or csvinfo[i] == None:
             csvinfo[i] = 'n/a'
 
     writer.writerow(csvinfo)
@@ -857,6 +894,7 @@ def scraper(college: str, filename: str):
 
 def main():
     navigateToSite()
+    # scraper('Oklahoma City Community College', 'temp.csv')
     driver.quit()
 
 
